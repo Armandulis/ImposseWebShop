@@ -182,11 +182,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Arman\\source\\repos\\ImposseWebApp\\WebShop.Core.Entity\\WebShop.Core.Entity.csproj",
+      "projectUniqueName": "C:\\Users\\Arman\\Desktop\\ImposseWebApp\\ImposseWebShop\\WebShop.Core.Entity\\WebShop.Core.Entity.csproj",
       "projectName": "WebShop.Core.Entity",
-      "projectPath": "C:\\Users\\Arman\\source\\repos\\ImposseWebApp\\WebShop.Core.Entity\\WebShop.Core.Entity.csproj",
+      "projectPath": "C:\\Users\\Arman\\Desktop\\ImposseWebApp\\ImposseWebShop\\WebShop.Core.Entity\\WebShop.Core.Entity.csproj",
       "packagesPath": "C:\\Users\\Arman\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Arman\\source\\repos\\ImposseWebApp\\WebShop.Core.Entity\\obj\\",
+      "outputPath": "C:\\Users\\Arman\\Desktop\\ImposseWebApp\\ImposseWebShop\\WebShop.Core.Entity\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

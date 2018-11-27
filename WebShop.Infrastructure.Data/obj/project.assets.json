@@ -694,6 +694,29 @@
         "compile": {
           "ref/netstandard1.3/System.Threading.Tasks.dll": {}
         }
+      },
+      "WebShop.Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "WebShop.Core.Entity": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/WebShop.Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/WebShop.Core.dll": {}
+        }
+      },
+      "WebShop.Core.Entity/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/WebShop.Core.Entity.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/WebShop.Core.Entity.dll": {}
+        }
       }
     }
   },
@@ -2761,6 +2784,16 @@
         "system.threading.tasks.4.0.11.nupkg.sha512",
         "system.threading.tasks.nuspec"
       ]
+    },
+    "WebShop.Core/1.0.0": {
+      "type": "project",
+      "path": "../WebShop.Core/WebShop.Core.csproj",
+      "msbuildProject": "../WebShop.Core/WebShop.Core.csproj"
+    },
+    "WebShop.Core.Entity/1.0.0": {
+      "type": "project",
+      "path": "../WebShop.Core.Entity/WebShop.Core.Entity.csproj",
+      "msbuildProject": "../WebShop.Core.Entity/WebShop.Core.Entity.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -2768,7 +2801,8 @@
       "Microsoft.EntityFrameworkCore.Sqlite >= 2.1.4",
       "Microsoft.EntityFrameworkCore.Sqlite.Core >= 2.1.4",
       "Microsoft.EntityFrameworkCore.Sqlite.Design >= 1.1.6",
-      "NETStandard.Library >= 2.0.3"
+      "NETStandard.Library >= 2.0.3",
+      "WebShop.Core >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -2778,11 +2812,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Arman\\source\\repos\\ImposseWebApp\\WebShop.Infrastructure.Data\\WebShop.Infrastructure.Data.csproj",
+      "projectUniqueName": "C:\\Users\\Arman\\Desktop\\ImposseWebApp\\ImposseWebShop\\WebShop.Infrastructure.Data\\WebShop.Infrastructure.Data.csproj",
       "projectName": "WebShop.Infrastructure.Data",
-      "projectPath": "C:\\Users\\Arman\\source\\repos\\ImposseWebApp\\WebShop.Infrastructure.Data\\WebShop.Infrastructure.Data.csproj",
+      "projectPath": "C:\\Users\\Arman\\Desktop\\ImposseWebApp\\ImposseWebShop\\WebShop.Infrastructure.Data\\WebShop.Infrastructure.Data.csproj",
       "packagesPath": "C:\\Users\\Arman\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Arman\\source\\repos\\ImposseWebApp\\WebShop.Infrastructure.Data\\obj\\",
+      "outputPath": "C:\\Users\\Arman\\Desktop\\ImposseWebApp\\ImposseWebShop\\WebShop.Infrastructure.Data\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -2800,7 +2834,11 @@
       },
       "frameworks": {
         "netstandard2.0": {
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Arman\\Desktop\\ImposseWebApp\\ImposseWebShop\\WebShop.Core\\WebShop.Core.csproj": {
+              "projectPath": "C:\\Users\\Arman\\Desktop\\ImposseWebApp\\ImposseWebShop\\WebShop.Core\\WebShop.Core.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

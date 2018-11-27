@@ -7,3 +7,17 @@ C:\Users\Arman\source\repos\ImposseWebApp\WebShop.Infrastructure.Data\obj\Debug\
 C:\Users\Arman\source\repos\ImposseWebApp\WebShop.Infrastructure.Data\obj\Debug\netstandard2.0\WebShop.Infrastructure.Data.AssemblyInfoInputs.cache
 C:\Users\Arman\source\repos\ImposseWebApp\WebShop.Infrastructure.Data\obj\Debug\netstandard2.0\WebShop.Infrastructure.Data.AssemblyInfo.cs
 C:\Users\Arman\source\repos\ImposseWebApp\WebShop.Infrastructure.Data\obj\Debug\netstandard2.0\WebShop.Infrastructure.Data.csproj.CopyComplete
+C:\Users\Arman\Desktop\ImposseWebApp\ImposseWebShop\WebShop.Infrastructure.Data\bin\Debug\netstandard2.0\WebShop.Infrastructure.Data.deps.json
+C:\Users\Arman\Desktop\ImposseWebApp\ImposseWebShop\WebShop.Infrastructure.Data\bin\Debug\netstandard2.0\WebShop.Infrastructure.Data.dll
+C:\Users\Arman\Desktop\ImposseWebApp\ImposseWebShop\WebShop.Infrastructure.Data\bin\Debug\netstandard2.0\WebShop.Infrastructure.Data.pdb
+C:\Users\Arman\Desktop\ImposseWebApp\ImposseWebShop\WebShop.Infrastructure.Data\bin\Debug\netstandard2.0\WebShop.Core.dll
+C:\Users\Arman\Desktop\ImposseWebApp\ImposseWebShop\WebShop.Infrastructure.Data\bin\Debug\netstandard2.0\WebShop.Core.pdb
+C:\Users\Arman\Desktop\ImposseWebApp\ImposseWebShop\WebShop.Infrastructure.Data\obj\Debug\netstandard2.0\WebShop.Infrastructure.Data.csprojAssemblyReference.cache
+C:\Users\Arman\Desktop\ImposseWebApp\ImposseWebShop\WebShop.Infrastructure.Data\obj\Debug\netstandard2.0\WebShop.Infrastructure.Data.csproj.CoreCompileInputs.cache
+C:\Users\Arman\Desktop\ImposseWebApp\ImposseWebShop\WebShop.Infrastructure.Data\obj\Debug\netstandard2.0\WebShop.Infrastructure.Data.AssemblyInfoInputs.cache
+C:\Users\Arman\Desktop\ImposseWebApp\ImposseWebShop\WebShop.Infrastructure.Data\obj\Debug\netstandard2.0\WebShop.Infrastructure.Data.AssemblyInfo.cs
+C:\Users\Arman\Desktop\ImposseWebApp\ImposseWebShop\WebShop.Infrastructure.Data\obj\Debug\netstandard2.0\WebShop.Infrastructure.Data.csproj.CopyComplete
+C:\Users\Arman\Desktop\ImposseWebApp\ImposseWebShop\WebShop.Infrastructure.Data\obj\Debug\netstandard2.0\WebShop.Infrastructure.Data.dll
+C:\Users\Arman\Desktop\ImposseWebApp\ImposseWebShop\WebShop.Infrastructure.Data\obj\Debug\netstandard2.0\WebShop.Infrastructure.Data.pdb
+C:\Users\Arman\Desktop\ImposseWebApp\ImposseWebShop\WebShop.Infrastructure.Data\bin\Debug\netstandard2.0\WebShop.Core.Entity.dll
+C:\Users\Arman\Desktop\ImposseWebApp\ImposseWebShop\WebShop.Infrastructure.Data\bin\Debug\netstandard2.0\WebShop.Core.Entity.pdb
