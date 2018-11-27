@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using WebShop.Core.Entity;
 
 namespace WebShop.Infrastructure.Data
 {
@@ -17,5 +18,6 @@ namespace WebShop.Infrastructure.Data
            
         }
 
+        public DbSet<Review> Review { get; set; }
     }
 }

@@ -25,6 +25,16 @@
         "build": {
           "build/netstandard2.0/NETStandard.Library.targets": {}
         }
+      },
+      "WebShop.Core.Entity/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/WebShop.Core.Entity.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/WebShop.Core.Entity.dll": {}
+        }
       }
     }
   },
@@ -168,11 +178,17 @@
         "netstandard.library.2.0.3.nupkg.sha512",
         "netstandard.library.nuspec"
       ]
+    },
+    "WebShop.Core.Entity/1.0.0": {
+      "type": "project",
+      "path": "../WebShop.Core.Entity/WebShop.Core.Entity.csproj",
+      "msbuildProject": "../WebShop.Core.Entity/WebShop.Core.Entity.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
-      "NETStandard.Library >= 2.0.3"
+      "NETStandard.Library >= 2.0.3",
+      "WebShop.Core.Entity >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -182,11 +198,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Arman\\source\\repos\\ImposseWebApp\\WebShop.Core\\WebShop.Core.csproj",
+      "projectUniqueName": "C:\\Users\\Arman\\Desktop\\ImposseWebApp\\ImposseWebShop\\WebShop.Core\\WebShop.Core.csproj",
       "projectName": "WebShop.Core",
-      "projectPath": "C:\\Users\\Arman\\source\\repos\\ImposseWebApp\\WebShop.Core\\WebShop.Core.csproj",
+      "projectPath": "C:\\Users\\Arman\\Desktop\\ImposseWebApp\\ImposseWebShop\\WebShop.Core\\WebShop.Core.csproj",
       "packagesPath": "C:\\Users\\Arman\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Arman\\source\\repos\\ImposseWebApp\\WebShop.Core\\obj\\",
+      "outputPath": "C:\\Users\\Arman\\Desktop\\ImposseWebApp\\ImposseWebShop\\WebShop.Core\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -204,7 +220,11 @@
       },
       "frameworks": {
         "netstandard2.0": {
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Arman\\Desktop\\ImposseWebApp\\ImposseWebShop\\WebShop.Core.Entity\\WebShop.Core.Entity.csproj": {
+              "projectPath": "C:\\Users\\Arman\\Desktop\\ImposseWebApp\\ImposseWebShop\\WebShop.Core.Entity\\WebShop.Core.Entity.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

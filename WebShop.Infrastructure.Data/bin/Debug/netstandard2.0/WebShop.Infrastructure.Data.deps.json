@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETStandard,Version=v2.0/",
-    "signature": "98a34d95137548b9a92f7836af05f2c8a55a44d2"
+    "signature": "888cf15df180479cdc54d037d756340a7a6d9327"
   },
   "compilationOptions": {},
   "targets": {
@@ -11,7 +11,10 @@
         "dependencies": {
           "Microsoft.EntityFrameworkCore.Sqlite": "2.1.4",
           "Microsoft.EntityFrameworkCore.Sqlite.Core": "2.1.4",
-          "NETStandard.Library": "2.0.3"
+          "Microsoft.EntityFrameworkCore.Sqlite.Design": "1.1.6",
+          "NETStandard.Library": "2.0.3",
+          "WebShop.Core": "1.0.0",
+          "WebShop.Core.Entity": "1.0.0"
         },
         "runtime": {
           "WebShop.Infrastructure.Data.dll": {}
@@ -68,6 +71,18 @@
           }
         }
       },
+      "Microsoft.EntityFrameworkCore.Relational.Design/1.1.6": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.Relational": "2.1.4",
+          "NETStandard.Library": "2.0.3"
+        },
+        "runtime": {
+          "lib/netstandard1.3/Microsoft.EntityFrameworkCore.Relational.Design.dll": {
+            "assemblyVersion": "1.1.6.0",
+            "fileVersion": "1.1.6.40621"
+          }
+        }
+      },
       "Microsoft.EntityFrameworkCore.Sqlite/2.1.4": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore.Sqlite.Core": "2.1.4",
@@ -83,6 +98,19 @@
           "lib/netstandard2.0/Microsoft.EntityFrameworkCore.Sqlite.dll": {
             "assemblyVersion": "2.1.4.0",
             "fileVersion": "2.1.4.18263"
+          }
+        }
+      },
+      "Microsoft.EntityFrameworkCore.Sqlite.Design/1.1.6": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.Relational.Design": "1.1.6",
+          "Microsoft.EntityFrameworkCore.Sqlite": "2.1.4",
+          "NETStandard.Library": "2.0.3"
+        },
+        "runtime": {
+          "lib/netstandard1.3/Microsoft.EntityFrameworkCore.Sqlite.Design.dll": {
+            "assemblyVersion": "1.1.6.0",
+            "fileVersion": "1.1.6.40621"
           }
         }
       },
@@ -565,6 +593,19 @@
           "Microsoft.NETCore.Targets": "1.0.1",
           "System.Runtime": "4.1.0"
         }
+      },
+      "WebShop.Core/1.0.0": {
+        "dependencies": {
+          "WebShop.Core.Entity": "1.0.0"
+        },
+        "runtime": {
+          "WebShop.Core.dll": {}
+        }
+      },
+      "WebShop.Core.Entity/1.0.0": {
+        "runtime": {
+          "WebShop.Core.Entity.dll": {}
+        }
       }
     }
   },
@@ -609,6 +650,13 @@
       "path": "microsoft.entityframeworkcore.relational/2.1.4",
       "hashPath": "microsoft.entityframeworkcore.relational.2.1.4.nupkg.sha512"
     },
+    "Microsoft.EntityFrameworkCore.Relational.Design/1.1.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-UVq94HrsK/eUSo4bkYBYW30UQ/uH2GoXcjTv7oIdeMKnAjLE3jm3C/BmftkQpr9beQCSbbcEySaVDhjlhrcQJQ==",
+      "path": "microsoft.entityframeworkcore.relational.design/1.1.6",
+      "hashPath": "microsoft.entityframeworkcore.relational.design.1.1.6.nupkg.sha512"
+    },
     "Microsoft.EntityFrameworkCore.Sqlite/2.1.4": {
       "type": "package",
       "serviceable": true,
@@ -622,6 +670,13 @@
       "sha512": "sha512-fDNobKc1Ffb3z56ckiWJ7J64pbVDBNiX5XdGGygr7GbwY/rG541NRTX8kXOSvkUZ2qNgAYDqAYjUTYMmzBnRCw==",
       "path": "microsoft.entityframeworkcore.sqlite.core/2.1.4",
       "hashPath": "microsoft.entityframeworkcore.sqlite.core.2.1.4.nupkg.sha512"
+    },
+    "Microsoft.EntityFrameworkCore.Sqlite.Design/1.1.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-InDEy2qUo0+gbumHlPIq9GCscoe+PpdJgvgo0+7uoJT+Gb18F72qrw8+UHivYShF9hoxc1dCcXxDbYidFUAaCw==",
+      "path": "microsoft.entityframeworkcore.sqlite.design/1.1.6",
+      "hashPath": "microsoft.entityframeworkcore.sqlite.design.1.1.6.nupkg.sha512"
     },
     "Microsoft.Extensions.Caching.Abstractions/2.1.1": {
       "type": "package",
@@ -944,6 +999,16 @@
       "sha512": "sha512-k1S4Gc6IGwtHGT8188RSeGaX86Qw/wnrgNLshJvsdNUOPP9etMmo8S07c+UlOAx4K/xLuN9ivA1bD0LVurtIxQ==",
       "path": "system.threading.tasks/4.0.11",
       "hashPath": "system.threading.tasks.4.0.11.nupkg.sha512"
+    },
+    "WebShop.Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "WebShop.Core.Entity/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }
