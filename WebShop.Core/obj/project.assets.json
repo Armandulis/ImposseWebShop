@@ -176,23 +176,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Arman\\.nuget\\packages\\": {},
+    "C:\\Users\\Ingvar\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Arman\\source\\repos\\ImposseWebApp\\WebShop.Core\\WebShop.Core.csproj",
+      "projectUniqueName": "C:\\Users\\Ingvar\\source\\repos\\ImposseWebShop\\WebShop.Core\\WebShop.Core.csproj",
       "projectName": "WebShop.Core",
-      "projectPath": "C:\\Users\\Arman\\source\\repos\\ImposseWebApp\\WebShop.Core\\WebShop.Core.csproj",
-      "packagesPath": "C:\\Users\\Arman\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Arman\\source\\repos\\ImposseWebApp\\WebShop.Core\\obj\\",
+      "projectPath": "C:\\Users\\Ingvar\\source\\repos\\ImposseWebShop\\WebShop.Core\\WebShop.Core.csproj",
+      "packagesPath": "C:\\Users\\Ingvar\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Ingvar\\source\\repos\\ImposseWebShop\\WebShop.Core\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Arman\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Ingvar\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

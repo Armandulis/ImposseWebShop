@@ -758,7 +758,7 @@
       ]
     },
     "Microsoft.EntityFrameworkCore.Relational.Design/1.1.6": {
-      "sha512": "UVq94HrsK/eUSo4bkYBYW30UQ/uH2GoXcjTv7oIdeMKnAjLE3jm3C/BmftkQpr9beQCSbbcEySaVDhjlhrcQJQ==",
+      "sha512": "XVlEYWa4C0ZeO4MbiOlrRdz3ujaHJVYe1tK0IUh8dAT5OW1qAgUKcz2VEwj41tIBxBkeyMzj5UEECdpi3KQFkg==",
       "type": "package",
       "path": "microsoft.entityframeworkcore.relational.design/1.1.6",
       "files": [
@@ -2772,23 +2772,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Arman\\.nuget\\packages\\": {},
+    "C:\\Users\\Ingvar\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Arman\\source\\repos\\ImposseWebApp\\WebShop.Infrastructure.Data\\WebShop.Infrastructure.Data.csproj",
+      "projectUniqueName": "C:\\Users\\Ingvar\\source\\repos\\ImposseWebShop\\WebShop.Infrastructure.Data\\WebShop.Infrastructure.Data.csproj",
       "projectName": "WebShop.Infrastructure.Data",
-      "projectPath": "C:\\Users\\Arman\\source\\repos\\ImposseWebApp\\WebShop.Infrastructure.Data\\WebShop.Infrastructure.Data.csproj",
-      "packagesPath": "C:\\Users\\Arman\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Arman\\source\\repos\\ImposseWebApp\\WebShop.Infrastructure.Data\\obj\\",
+      "projectPath": "C:\\Users\\Ingvar\\source\\repos\\ImposseWebShop\\WebShop.Infrastructure.Data\\WebShop.Infrastructure.Data.csproj",
+      "packagesPath": "C:\\Users\\Ingvar\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Ingvar\\source\\repos\\ImposseWebShop\\WebShop.Infrastructure.Data\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Arman\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Ingvar\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
