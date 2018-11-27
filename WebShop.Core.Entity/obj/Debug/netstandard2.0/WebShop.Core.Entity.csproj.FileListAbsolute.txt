@@ -1,0 +1,9 @@
+C:\Users\Ingvar\Source\Repos\ImposseWebShop\WebShop.Core.Entity\bin\Debug\netstandard2.0\WebShop.Core.Entity.deps.json
+C:\Users\Ingvar\Source\Repos\ImposseWebShop\WebShop.Core.Entity\bin\Debug\netstandard2.0\WebShop.Core.Entity.dll
+C:\Users\Ingvar\Source\Repos\ImposseWebShop\WebShop.Core.Entity\bin\Debug\netstandard2.0\WebShop.Core.Entity.pdb
+C:\Users\Ingvar\Source\Repos\ImposseWebShop\WebShop.Core.Entity\obj\Debug\netstandard2.0\WebShop.Core.Entity.csprojAssemblyReference.cache
+C:\Users\Ingvar\Source\Repos\ImposseWebShop\WebShop.Core.Entity\obj\Debug\netstandard2.0\WebShop.Core.Entity.csproj.CoreCompileInputs.cache
+C:\Users\Ingvar\Source\Repos\ImposseWebShop\WebShop.Core.Entity\obj\Debug\netstandard2.0\WebShop.Core.Entity.AssemblyInfoInputs.cache
+C:\Users\Ingvar\Source\Repos\ImposseWebShop\WebShop.Core.Entity\obj\Debug\netstandard2.0\WebShop.Core.Entity.AssemblyInfo.cs
+C:\Users\Ingvar\Source\Repos\ImposseWebShop\WebShop.Core.Entity\obj\Debug\netstandard2.0\WebShop.Core.Entity.dll
+C:\Users\Ingvar\Source\Repos\ImposseWebShop\WebShop.Core.Entity\obj\Debug\netstandard2.0\WebShop.Core.Entity.pdb
