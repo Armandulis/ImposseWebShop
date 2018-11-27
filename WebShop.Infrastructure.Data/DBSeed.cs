@@ -12,6 +12,13 @@ namespace WebShop.Infrastructure.Data
             ctx.Database.EnsureDeleted();
             ctx.Database.EnsureCreated();
 
+
+            ctx.Review.Add(new Review() {
+                Id = 1,
+                Comment = "Great Product",
+                Rating = 5
+            });
+
             ctx.Story.Add(new Story() {
                 Id = 1,
                 Date = DateTime.Now,
@@ -20,8 +27,6 @@ namespace WebShop.Infrastructure.Data
             });
 
             ctx.SaveChanges();
-
-
         }
 
     }

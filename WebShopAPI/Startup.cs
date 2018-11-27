@@ -33,6 +33,8 @@ namespace WebShopAPI
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
+            services.AddScoped<IReviewRepository, ReviewRepository>();
+            services.AddScoped<IReviewService, ReviewService>();
             services.AddScoped<IStoryRepository, StoryRepository>();
             services.AddScoped<IStoryService, StoryService>();
 
