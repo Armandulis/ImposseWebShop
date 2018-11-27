@@ -12651,8 +12651,6 @@
       "Microsoft.EntityFrameworkCore.Sqlite.Design >= 1.1.6",
       "Microsoft.NETCore.App >= 2.1.0",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 2.1.1",
-      "WebShop.Core >= 1.0.0",
-      "WebShop.Core.Entity >= 1.0.0",
       "WebShop.Infrastructure.Data >= 1.0.0"
     ]
   },
@@ -12686,12 +12684,6 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "C:\\Users\\Arman\\Desktop\\ImposseWebApp\\ImposseWebShop\\WebShop.Core.Entity\\WebShop.Core.Entity.csproj": {
-              "projectPath": "C:\\Users\\Arman\\Desktop\\ImposseWebApp\\ImposseWebShop\\WebShop.Core.Entity\\WebShop.Core.Entity.csproj"
-            },
-            "C:\\Users\\Arman\\Desktop\\ImposseWebApp\\ImposseWebShop\\WebShop.Core\\WebShop.Core.csproj": {
-              "projectPath": "C:\\Users\\Arman\\Desktop\\ImposseWebApp\\ImposseWebShop\\WebShop.Core\\WebShop.Core.csproj"
-            },
             "C:\\Users\\Arman\\Desktop\\ImposseWebApp\\ImposseWebShop\\WebShop.Infrastructure.Data\\WebShop.Infrastructure.Data.csproj": {
               "projectPath": "C:\\Users\\Arman\\Desktop\\ImposseWebApp\\ImposseWebShop\\WebShop.Infrastructure.Data\\WebShop.Infrastructure.Data.csproj"
             }
