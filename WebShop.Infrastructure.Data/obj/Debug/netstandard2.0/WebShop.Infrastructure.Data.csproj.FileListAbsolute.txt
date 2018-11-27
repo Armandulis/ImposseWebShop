@@ -7,3 +7,6 @@ C:\Users\Arman\source\repos\ImposseWebApp\WebShop.Infrastructure.Data\obj\Debug\
 C:\Users\Arman\source\repos\ImposseWebApp\WebShop.Infrastructure.Data\obj\Debug\netstandard2.0\WebShop.Infrastructure.Data.AssemblyInfoInputs.cache
 C:\Users\Arman\source\repos\ImposseWebApp\WebShop.Infrastructure.Data\obj\Debug\netstandard2.0\WebShop.Infrastructure.Data.AssemblyInfo.cs
 C:\Users\Arman\source\repos\ImposseWebApp\WebShop.Infrastructure.Data\obj\Debug\netstandard2.0\WebShop.Infrastructure.Data.csproj.CopyComplete
+C:\Users\Marius\Downloads\blackpeopleinclass\ImposseWebShop\WebShop.Infrastructure.Data\obj\Debug\netstandard2.0\WebShop.Infrastructure.Data.csproj.CoreCompileInputs.cache
+C:\Users\Marius\Downloads\blackpeopleinclass\ImposseWebShop\WebShop.Infrastructure.Data\obj\Debug\netstandard2.0\WebShop.Infrastructure.Data.AssemblyInfoInputs.cache
+C:\Users\Marius\Downloads\blackpeopleinclass\ImposseWebShop\WebShop.Infrastructure.Data\obj\Debug\netstandard2.0\WebShop.Infrastructure.Data.AssemblyInfo.cs

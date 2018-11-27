@@ -1,0 +1,4 @@
+C:\Users\Marius\Downloads\blackpeopleinclass\ImposseWebShop\WebShop.Core\obj\Debug\netstandard2.0\WebShop.Core.csprojAssemblyReference.cache
+C:\Users\Marius\Downloads\blackpeopleinclass\ImposseWebShop\WebShop.Core\obj\Debug\netstandard2.0\WebShop.Core.csproj.CoreCompileInputs.cache
+C:\Users\Marius\Downloads\blackpeopleinclass\ImposseWebShop\WebShop.Core\obj\Debug\netstandard2.0\WebShop.Core.AssemblyInfoInputs.cache
+C:\Users\Marius\Downloads\blackpeopleinclass\ImposseWebShop\WebShop.Core\obj\Debug\netstandard2.0\WebShop.Core.AssemblyInfo.cs

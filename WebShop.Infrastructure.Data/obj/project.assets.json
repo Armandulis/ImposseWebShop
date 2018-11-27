@@ -694,6 +694,29 @@
         "compile": {
           "ref/netstandard1.3/System.Threading.Tasks.dll": {}
         }
+      },
+      "WebShop.Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "WebShop.Core.Entity": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/WebShop.Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/WebShop.Core.dll": {}
+        }
+      },
+      "WebShop.Core.Entity/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/WebShop.Core.Entity.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/WebShop.Core.Entity.dll": {}
+        }
       }
     }
   },
@@ -795,7 +818,7 @@
       ]
     },
     "Microsoft.EntityFrameworkCore.Sqlite.Design/1.1.6": {
-      "sha512": "InDEy2qUo0+gbumHlPIq9GCscoe+PpdJgvgo0+7uoJT+Gb18F72qrw8+UHivYShF9hoxc1dCcXxDbYidFUAaCw==",
+      "sha512": "uWBy0RXUs3p7XPbj2xsN6NpAsB9UWw6FdgoM31lYYQfZkB2DOV5l5YiTKi1qxIhVzab9ZN2I96uNY2IKvqIwpA==",
       "type": "package",
       "path": "microsoft.entityframeworkcore.sqlite.design/1.1.6",
       "files": [
@@ -2761,6 +2784,16 @@
         "system.threading.tasks.4.0.11.nupkg.sha512",
         "system.threading.tasks.nuspec"
       ]
+    },
+    "WebShop.Core/1.0.0": {
+      "type": "project",
+      "path": "../WebShop.Core/WebShop.Core.csproj",
+      "msbuildProject": "../WebShop.Core/WebShop.Core.csproj"
+    },
+    "WebShop.Core.Entity/1.0.0": {
+      "type": "project",
+      "path": "../WebShop.Core.Entity/WebShop.Core.Entity.csproj",
+      "msbuildProject": "../WebShop.Core.Entity/WebShop.Core.Entity.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -2768,27 +2801,29 @@
       "Microsoft.EntityFrameworkCore.Sqlite >= 2.1.4",
       "Microsoft.EntityFrameworkCore.Sqlite.Core >= 2.1.4",
       "Microsoft.EntityFrameworkCore.Sqlite.Design >= 1.1.6",
-      "NETStandard.Library >= 2.0.3"
+      "NETStandard.Library >= 2.0.3",
+      "WebShop.Core >= 1.0.0",
+      "WebShop.Core.Entity >= 1.0.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Arman\\.nuget\\packages\\": {},
+    "C:\\Users\\Marius\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Arman\\source\\repos\\ImposseWebApp\\WebShop.Infrastructure.Data\\WebShop.Infrastructure.Data.csproj",
+      "projectUniqueName": "C:\\Users\\Marius\\Downloads\\blackpeopleinclass\\ImposseWebShop\\WebShop.Infrastructure.Data\\WebShop.Infrastructure.Data.csproj",
       "projectName": "WebShop.Infrastructure.Data",
-      "projectPath": "C:\\Users\\Arman\\source\\repos\\ImposseWebApp\\WebShop.Infrastructure.Data\\WebShop.Infrastructure.Data.csproj",
-      "packagesPath": "C:\\Users\\Arman\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Arman\\source\\repos\\ImposseWebApp\\WebShop.Infrastructure.Data\\obj\\",
+      "projectPath": "C:\\Users\\Marius\\Downloads\\blackpeopleinclass\\ImposseWebShop\\WebShop.Infrastructure.Data\\WebShop.Infrastructure.Data.csproj",
+      "packagesPath": "C:\\Users\\Marius\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Marius\\Downloads\\blackpeopleinclass\\ImposseWebShop\\WebShop.Infrastructure.Data\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Arman\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Marius\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2800,7 +2835,14 @@
       },
       "frameworks": {
         "netstandard2.0": {
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Marius\\Downloads\\blackpeopleinclass\\ImposseWebShop\\WebShop.Core.Entity\\WebShop.Core.Entity.csproj": {
+              "projectPath": "C:\\Users\\Marius\\Downloads\\blackpeopleinclass\\ImposseWebShop\\WebShop.Core.Entity\\WebShop.Core.Entity.csproj"
+            },
+            "C:\\Users\\Marius\\Downloads\\blackpeopleinclass\\ImposseWebShop\\WebShop.Core\\WebShop.Core.csproj": {
+              "projectPath": "C:\\Users\\Marius\\Downloads\\blackpeopleinclass\\ImposseWebShop\\WebShop.Core\\WebShop.Core.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

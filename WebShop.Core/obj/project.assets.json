@@ -25,6 +25,16 @@
         "build": {
           "build/netstandard2.0/NETStandard.Library.targets": {}
         }
+      },
+      "WebShop.Core.Entity/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/WebShop.Core.Entity.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/WebShop.Core.Entity.dll": {}
+        }
       }
     }
   },
@@ -168,31 +178,37 @@
         "netstandard.library.2.0.3.nupkg.sha512",
         "netstandard.library.nuspec"
       ]
+    },
+    "WebShop.Core.Entity/1.0.0": {
+      "type": "project",
+      "path": "../WebShop.Core.Entity/WebShop.Core.Entity.csproj",
+      "msbuildProject": "../WebShop.Core.Entity/WebShop.Core.Entity.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
-      "NETStandard.Library >= 2.0.3"
+      "NETStandard.Library >= 2.0.3",
+      "WebShop.Core.Entity >= 1.0.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Arman\\.nuget\\packages\\": {},
+    "C:\\Users\\Marius\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Arman\\source\\repos\\ImposseWebApp\\WebShop.Core\\WebShop.Core.csproj",
+      "projectUniqueName": "C:\\Users\\Marius\\Downloads\\blackpeopleinclass\\ImposseWebShop\\WebShop.Core\\WebShop.Core.csproj",
       "projectName": "WebShop.Core",
-      "projectPath": "C:\\Users\\Arman\\source\\repos\\ImposseWebApp\\WebShop.Core\\WebShop.Core.csproj",
-      "packagesPath": "C:\\Users\\Arman\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Arman\\source\\repos\\ImposseWebApp\\WebShop.Core\\obj\\",
+      "projectPath": "C:\\Users\\Marius\\Downloads\\blackpeopleinclass\\ImposseWebShop\\WebShop.Core\\WebShop.Core.csproj",
+      "packagesPath": "C:\\Users\\Marius\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Marius\\Downloads\\blackpeopleinclass\\ImposseWebShop\\WebShop.Core\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Arman\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Marius\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -204,7 +220,11 @@
       },
       "frameworks": {
         "netstandard2.0": {
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Marius\\Downloads\\blackpeopleinclass\\ImposseWebShop\\WebShop.Core.Entity\\WebShop.Core.Entity.csproj": {
+              "projectPath": "C:\\Users\\Marius\\Downloads\\blackpeopleinclass\\ImposseWebShop\\WebShop.Core.Entity\\WebShop.Core.Entity.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
