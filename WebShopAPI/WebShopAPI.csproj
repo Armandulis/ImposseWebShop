@@ -18,6 +18,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\WebShop.Core.Entity\WebShop.Core.Entity.csproj" />
+    <ProjectReference Include="..\WebShop.Core\WebShop.Core.csproj" />
     <ProjectReference Include="..\WebShop.Infrastructure.Data\WebShop.Infrastructure.Data.csproj" />
   </ItemGroup>
 

@@ -1,0 +1,66 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using WebShop.Core.ApplicationService.Services;
+using WebShop.Core.Entity;
+
+namespace WebShopAPI.Controllers
+{
+    [Route("api/[controller]")]
+    [ApiController]
+    public class StoryController : ControllerBase
+    {
+
+        readonly IStoryService _StoryService;
+
+        public StoryController(IStoryService StoryService)
+        {
+            _StoryService = StoryService;
+        }
+
+        // GET: api/Story
+        [HttpGet]
+        public IEnumerable<Story> Get()
+        {
+            return _StoryService.GetAllStories();
+        }
+
+        // GET: api/Story/5
+        [HttpGet("{id}", Name = "Get")]
+        public ActionResult<Story> Get(int id)
+        {
+
+            if (id < 1) return BadRequest("Id must be greater then 0");
+            else return _StoryService.GetStory(id);
+        }
+
+        // POST: api/Story
+        [HttpPost]
+        public ActionResult<Story> Post([FromBody] Story story)
+        {
+
+            if (story.Text != null && story.Text != "" && _StoryService.CreateStory(story) != null) return Ok("Story was posted");
+            else return BadRequest("Story has to have Text in it");
+        }
+
+        // PUT: api/Story/5
+        [HttpPut("{id}")]
+        public ActionResult Put(int id, [FromBody] Story story)
+        {
+            if (_StoryService.UpdateStory(story) != null) return Ok($"Story {story.Id} was Deleted");
+            else return BadRequest("There is no story with such id");
+        }
+
+        // DELETE: api/ApiWithActions/5
+        [HttpDelete("{id}")]
+        public ActionResult<Story> Delete(int id)
+        {
+            if (_StoryService.DeleteStory(id) != null) return Ok($"Story with Id: {id} is Deleted");
+            else return BadRequest("There is no story with such id");
+
+        }
+    }
+}
