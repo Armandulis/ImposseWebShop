@@ -1,8 +1,0 @@
-C:\Users\Arman\source\repos\ImposseWebApp\WebShopAPI\bin\Debug\netcoreapp2.1\WebShop.Infrastructure.Data.dll
-C:\Users\Arman\source\repos\ImposseWebApp\WebShopAPI\obj\Debug\netcoreapp2.1\WebShopAPI.csprojAssemblyReference.cache
-C:\Users\Arman\source\repos\ImposseWebApp\WebShopAPI\obj\Debug\netcoreapp2.1\WebShopAPI.csproj.CoreCompileInputs.cache
-C:\Users\Arman\source\repos\ImposseWebApp\WebShopAPI\obj\Debug\netcoreapp2.1\WebShopAPI.RazorAssemblyInfo.cache
-C:\Users\Arman\source\repos\ImposseWebApp\WebShopAPI\obj\Debug\netcoreapp2.1\WebShopAPI.RazorAssemblyInfo.cs
-C:\Users\Arman\source\repos\ImposseWebApp\WebShopAPI\obj\Debug\netcoreapp2.1\WebShopAPI.AssemblyInfoInputs.cache
-C:\Users\Arman\source\repos\ImposseWebApp\WebShopAPI\obj\Debug\netcoreapp2.1\WebShopAPI.AssemblyInfo.cs
-C:\Users\Arman\source\repos\ImposseWebApp\WebShopAPI\obj\Debug\netcoreapp2.1\WebShopAPI.RazorTargetAssemblyInfo.cache
