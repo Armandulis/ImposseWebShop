@@ -6,11 +6,16 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using WebShop.Core.ApplicationService;
+using WebShop.Core.ApplicationService.Services;
+using WebShop.Core.DomainService;
 using WebShop.Infrastructure.Data;
+using WebShop.Infrastructure.Data.Repositories;
 
 namespace WebShopAPI
 {
@@ -27,8 +32,16 @@ namespace WebShopAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-            
+
+            services.AddScoped<IStoryRepository, StoryRepository>();
+            services.AddScoped<IStoryService, StoryService>();
+
+            services.AddDbContext<WebShopContext>(
+              option => option.UseSqlite("Data Source=petShopApp.db"));
+
         }
+
+      
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
