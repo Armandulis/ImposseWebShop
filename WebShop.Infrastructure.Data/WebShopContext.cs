@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -25,5 +25,7 @@ namespace WebShop.Infrastructure.Data
            
         }
 
+        public DbSet<Review> Review { get; set; }
+        public DbSet<Story> Story { get; set; }
     }
 }

@@ -38,8 +38,18 @@ namespace WebShopAPI
                 option => option.UseSqlite("Data Source=webShopApp.db"));
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-            
+
+            services.AddScoped<IReviewRepository, ReviewRepository>();
+            services.AddScoped<IReviewService, ReviewService>();
+            services.AddScoped<IStoryRepository, StoryRepository>();
+            services.AddScoped<IStoryService, StoryService>();
+
+            services.AddDbContext<WebShopContext>(
+              option => option.UseSqlite("Data Source=petShopApp.db"));
+
         }
+
+      
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
