@@ -41,11 +41,12 @@ namespace WebShopAPI
 
             services.AddScoped<IReviewRepository, ReviewRepository>();
             services.AddScoped<IReviewService, ReviewService>();
+
             services.AddScoped<IStoryRepository, StoryRepository>();
             services.AddScoped<IStoryService, StoryService>();
 
-            services.AddDbContext<WebShopContext>(
-              option => option.UseSqlite("Data Source=petShopApp.db"));
+            services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IUserService, UserService>();
 
         }
 
