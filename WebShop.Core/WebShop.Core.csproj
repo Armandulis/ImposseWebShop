@@ -8,4 +8,8 @@
     <ProjectReference Include="..\WebShop.Core.Entity\WebShop.Core.Entity.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\WebShop.Core.Entity\WebShop.Core.Entity.csproj" />
+  </ItemGroup>
+
 </Project>
