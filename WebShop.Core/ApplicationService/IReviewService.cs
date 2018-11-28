@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using WebShop.Core.Entity;
 
-namespace WebShop.Core.ApplicationService.Services
+namespace WebShop.Core.ApplicationService
 {
     public interface IReviewService
     {

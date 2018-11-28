@@ -13,7 +13,7 @@ namespace WebShop.Core.Entity
         public string Gender { get; set; }
         public string Color { get; set; }
         public string Type { get; set; }
-        //public List<Review> Reviews { get; set; }
+        public List<Review> Reviews { get; set; }
 
         public Product()
         {

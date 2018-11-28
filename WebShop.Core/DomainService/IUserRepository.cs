@@ -10,7 +10,7 @@ namespace WebShop.Core.DomainService
         IEnumerable<User> GetAll();
         User UserGet(int id);
         User UserAdd(User entity);
-        void UserEdit(User entity);
-        void UserRemove(int id);
+        User UserEdit(User entity);
+        User UserRemove(int id);
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using WebShop.Core.DomainService;
 using WebShop.Core.Entity;
@@ -26,7 +27,7 @@ namespace WebShop.Core.ApplicationService.Services
 
         public User FindUserByID(int id)
         {
-            var user = _userRepo.GetByID(id);
+            var user = _userRepo.UserGet(id);
             return user;
         }
 
@@ -37,14 +38,17 @@ namespace WebShop.Core.ApplicationService.Services
 
         public User NewUser(User user)
         {
-            return _userRepo.UserCreate(user);
+            return _userRepo.UserAdd(user);
         }
 
         public List<User> ReadAllUsers()
         {
-            return _userRepo.ListUser().ToList();
+            return _userRepo.GetAll().ToList();
         }
 
-       
+        public User UpdateUser(User user)
+        {
+            return _userRepo.UserEdit(user);
+        }
     }
 }

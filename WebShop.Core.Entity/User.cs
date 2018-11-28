@@ -14,8 +14,8 @@ namespace WebShop.Core.Entity
         public byte[] PasswordSalt { get; set; }
         public bool isAdmin { get; set; }
         public string Email { get; set; }
-        //public List<Story> Stories { get; set; }
-        //public List<Review> Reviews { get; set; }
+        public List<Story> Stories { get; set; }
+        public List<Review> Reviews { get; set; }
 
     }
 }

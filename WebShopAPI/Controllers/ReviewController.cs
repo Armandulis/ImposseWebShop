@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using WebShop.Core.ApplicationService;
 using WebShop.Core.ApplicationService.Services;
 using WebShop.Core.Entity;
 
@@ -49,7 +50,10 @@ namespace WebShopAPI.Controllers
         [HttpPut("{id}")]
         public ActionResult<Review> Put(int id, [FromBody] Review review)
         {
-
+            if (id != review.Id)
+            {
+                return BadRequest();
+            }
             return Ok(_reviewService.UpdateReview(review));
         }
 

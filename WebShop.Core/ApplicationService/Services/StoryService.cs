@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using WebShop.Core.ApplicationService.Services;
+
 using WebShop.Core.DomainService;
 using WebShop.Core.Entity;
 
-namespace WebShop.Core.ApplicationService
+namespace WebShop.Core.ApplicationService.Services
 {
     public class StoryService : IStoryService
     {

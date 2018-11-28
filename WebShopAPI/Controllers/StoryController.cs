@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using WebShop.Core.ApplicationService;
 using WebShop.Core.ApplicationService.Services;
 using WebShop.Core.Entity;
 
@@ -14,18 +15,18 @@ namespace WebShopAPI.Controllers
     public class StoryController : ControllerBase
     {
 
-        readonly IStoryService _StoryService;
+        readonly IStoryService _storyService;
 
-        public StoryController(IStoryService StoryService)
+        public StoryController(IStoryService storyService)
         {
-            _StoryService = StoryService;
+            _storyService = storyService;
         }
 
         // GET: api/Story
         [HttpGet]
         public IEnumerable<Story> Get()
         {
-            return _StoryService.GetAllStories();
+            return _storyService.GetAllStories();
         }
 
         // GET: api/Story/5
@@ -34,7 +35,7 @@ namespace WebShopAPI.Controllers
         {
 
             if (id < 1) return BadRequest("Id must be greater then 0");
-            else return _StoryService.GetStory(id);
+            else return _storyService.GetStory(id);
         }
 
         // POST: api/Story
@@ -42,7 +43,7 @@ namespace WebShopAPI.Controllers
         public ActionResult<Story> Post([FromBody] Story story)
         {
 
-            if (story.Text != null && story.Text != "" && _StoryService.CreateStory(story) != null) return Ok("Story was posted");
+            if (story.Text != null && story.Text != "" && _storyService.CreateStory(story) != null) return Ok("Story was posted");
             else return BadRequest("Story has to have Text in it");
         }
 
@@ -50,7 +51,11 @@ namespace WebShopAPI.Controllers
         [HttpPut("{id}")]
         public ActionResult Put(int id, [FromBody] Story story)
         {
-            if (_StoryService.UpdateStory(story) != null) return Ok($"Story {story.Id} was Deleted");
+            if (id != story.Id)
+            {
+                return BadRequest();
+            }
+            if (_storyService.UpdateStory(story) != null) return Ok($"Story {story.Id} was Deleted");
             else return BadRequest("There is no story with such id");
         }
 
@@ -58,7 +63,7 @@ namespace WebShopAPI.Controllers
         [HttpDelete("{id}")]
         public ActionResult<Story> Delete(int id)
         {
-            if (_StoryService.DeleteStory(id) != null) return Ok($"Story with Id: {id} is Deleted");
+            if (_storyService.DeleteStory(id) != null) return Ok($"Story with Id: {id} is Deleted");
             else return BadRequest("There is no story with such id");
 
         }

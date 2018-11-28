@@ -35,18 +35,21 @@ namespace WebShop.Infrastructure.Data.Repositories
             return user;
         }
 
-        public void UserEdit(User entity)
+        public User UserEdit(User entity)
         {
-            _ctx.Entry(entity).State = EntityState.Modified;
+            var updatedUser = _ctx.User.Update(entity).Entity;
+            
             _ctx.SaveChanges();
+            return updatedUser;
         }
 
-        public void UserRemove(int id)
+        public User UserRemove(int id)
         {
 
             var item = _ctx.User.FirstOrDefault(b => b.Id == id);
             _ctx.User.Remove(item);
             _ctx.SaveChanges();
+            return item;
         }
 
     }
