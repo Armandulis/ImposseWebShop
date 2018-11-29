@@ -30,7 +30,7 @@ namespace WebShopAPI.Controllers
         }
 
         // GET: api/Story/5
-        [HttpGet("{id}", Name = "Get")]
+        [HttpGet("{id}", Name = "GetStory")]
         public ActionResult<Story> Get(int id)
         {
 

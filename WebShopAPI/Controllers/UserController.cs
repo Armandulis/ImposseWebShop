@@ -29,7 +29,7 @@ namespace WebShopAPI.Controllers
         }
 
         // GET: api/User/5
-        [HttpGet("{id}", Name = "Get")]
+        [HttpGet("{id}", Name = "GetUser")]
         public ActionResult<User> Get(int id)
         {
             if (id < 1) return BadRequest("Id must be greater then 0");
