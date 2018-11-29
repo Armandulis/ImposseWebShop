@@ -42,8 +42,9 @@ namespace WebShopAPI.Controllers
         [HttpPost]
         public ActionResult<Story> Post([FromBody] Story story)
         {
+            Story storythis = _storyService.CreateStory(story);
 
-            if (story.Text != null && story.Text != "" && _storyService.CreateStory(story) != null) return Ok("Story was posted");
+            if (story.Text != null && story.Text != "") return Ok(storythis);
             else return BadRequest("Story has to have Text in it");
         }
 
