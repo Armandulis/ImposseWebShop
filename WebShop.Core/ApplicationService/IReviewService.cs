@@ -14,7 +14,7 @@ namespace WebShop.Core.ApplicationService
 
         //read
         Review GetReview(int id);
-        IEnumerable<Review> GetAllReviews();
+        List<Review> GetAllReviews();
 
         //update
         Review UpdateReview(Review review);

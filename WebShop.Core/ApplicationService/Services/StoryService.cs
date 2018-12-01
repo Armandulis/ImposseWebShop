@@ -36,7 +36,7 @@ namespace WebShop.Core.ApplicationService.Services
 
 
         //Read
-        public IEnumerable<Story> GetAllStories()
+        public List<Story> GetAllStories()
         {
             return _Repo.GetAllStories().ToList();
         }

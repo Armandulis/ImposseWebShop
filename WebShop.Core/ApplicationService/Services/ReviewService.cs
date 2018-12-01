@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using WebShop.Core.ApplicationService.Services;
 using WebShop.Core.DomainService;
@@ -26,9 +27,9 @@ namespace WebShop.Core.ApplicationService.Services
             return _repo.DeleteReview(id);
         }
 
-        public IEnumerable<Review> GetAllReviews()
+        public List<Review> GetAllReviews()
         {
-           return _repo.GetAllReviews();
+           return _repo.GetAllReviews().ToList();
         }
 
         public Review GetReview(int id)

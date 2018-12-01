@@ -54,17 +54,43 @@ namespace WebShop.Infrastructure.Data
                 Name = "a fcking shirt"
             });
 
+
+            var password = "Password";
+
+            byte[] passwordHashA, passwordSaltA, passwordHashAdmin, passwordSaltAdmin;
+
+            CreatePasswordHash(password, out passwordHashA, out passwordSaltA);
+            CreatePasswordHash(password, out passwordHashAdmin, out passwordSaltAdmin);
+
             ctx.User.Add(new User() {
                 Id =1,
                 Firstname ="Generic name",
-                Lastname = "Generic lastname"
+                Lastname = "Generic lastname",
+                Username = "Admin",
+                PasswordHash = passwordHashAdmin,
+                PasswordSalt = passwordSaltAdmin,
+                isAdmin = true
+               
             });
             ctx.User.Add(new User()
             {
                 Id = 2,
                 Firstname = "lars",
-                Lastname = "the web master"
+                Lastname = "the web master",
+                Username = "User",
+                PasswordHash = passwordHashA,
+                PasswordSalt = passwordSaltA,
+                isAdmin = true
             });
+
+            void CreatePasswordHash(string passwordToHash, out byte[] passwordHash, out byte[] passwordSalt)
+            {
+                using (var hmac = new System.Security.Cryptography.HMACSHA512())
+                {
+                    passwordSalt = hmac.Key;
+                    passwordHash = hmac.ComputeHash(System.Text.Encoding.UTF8.GetBytes(passwordToHash));
+                }
+            }
 
             ctx.SaveChanges();
         }
