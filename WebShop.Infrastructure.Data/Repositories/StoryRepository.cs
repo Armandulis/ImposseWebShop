@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -26,6 +27,7 @@ namespace WebShop.Infrastructure.Data.Repositories
 
         public Story DeleteStory(int id)
         {
+            
             var newStory = _ctx.Story.Remove(GetStory(id)).Entity;
             _ctx.SaveChanges();
             return newStory;
@@ -34,12 +36,12 @@ namespace WebShop.Infrastructure.Data.Repositories
 
         public IEnumerable<Story> GetAllStories()
         {
-            return _ctx.Story;        
+            return _ctx.Story.Include(story => story.User);        
         }
 
         public Story GetStory(int id)
         {
-            return _ctx.Story.FirstOrDefault(story => story.Id == id);
+            return _ctx.Story.Include(story => story.User).FirstOrDefault(story => story.Id == id);
         }
 
         public Story UpdateStory(Story story)

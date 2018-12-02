@@ -20,12 +20,12 @@ namespace WebShop.Infrastructure.Data.Repositories
 
         public IEnumerable<User> GetAll()
         {
-            return _ctx.User.ToList();
+            return _ctx.User.Include(user => user.Stories).ToList();
         }
 
         public User UserGet(int id)
         {
-            return _ctx.User.FirstOrDefault(b => b.Id == id);
+            return _ctx.User.Include(user => user.Stories).FirstOrDefault(b => b.Id == id);
         }
 
         public User UserAdd(User entity)
@@ -45,7 +45,8 @@ namespace WebShop.Infrastructure.Data.Repositories
 
         public User UserRemove(int id)
         {
-
+            //var storiesToDelete = _ctx.Story.Where(story => story.User.Id == id);
+            //_ctx.RemoveRange(storiesToDelete);
             var item = _ctx.User.FirstOrDefault(b => b.Id == id);
             _ctx.User.Remove(item);
             _ctx.SaveChanges();

@@ -9,79 +9,92 @@ namespace WebShop.Infrastructure.Data
     {
         public static void SeedDB(WebShopContext ctx)
         {
+            // DELETES AND CREATES DATABASE
             ctx.Database.EnsureDeleted();
             ctx.Database.EnsureCreated();
 
 
-            ctx.Review.Add(new Review() {
-                Id = 1,
-                Comment = "Great Product",
-                Rating = 5
-            });
-
-            ctx.Review.Add(new Review()
-            {
-                Id = 2,
-                Comment = "fantastic Product",
-                Rating = 5
-            });
-
-            ctx.Story.Add(new Story() {
-                Id = 1,
-                Date = DateTime.Now,
-                Title = "Pls fcking work",
-                Text ="This is a Great Story",
-                
-            });
-            ctx.Story.Add(new Story()
-            {
-                Id = 2,
-                Date = DateTime.Now,
-                Title = "u did fcking work, right?",
-                Text = "This is a Great jkwbdkaj wd",
-
-            });
-
-            ctx.Products.Add(new Product()
-            {
-                Id = 1,
-                Name = "pls work wtf"
-            });
-
-            ctx.Products.Add(new Product()
-            {
-                Id = 2,
-                Name = "a fcking shirt"
-            });
-
-
             var password = "Password";
-
+            // HASHES PASWORDS
             byte[] passwordHashA, passwordSaltA, passwordHashAdmin, passwordSaltAdmin;
 
             CreatePasswordHash(password, out passwordHashA, out passwordSaltA);
             CreatePasswordHash(password, out passwordHashAdmin, out passwordSaltAdmin);
 
-            ctx.User.Add(new User() {
-                Id =1,
-                Firstname ="Generic name",
+            // CEATING USERS
+            var user1 = new User()
+            {
+                Firstname = "Generic name",
                 Lastname = "Generic lastname",
                 Username = "Admin",
                 PasswordHash = passwordHashAdmin,
                 PasswordSalt = passwordSaltAdmin,
                 isAdmin = true
-               
-            });
-            ctx.User.Add(new User()
+            };
+
+            var user2 = new User()
             {
-                Id = 2,
                 Firstname = "lars",
                 Lastname = "the web master",
                 Username = "User",
                 PasswordHash = passwordHashA,
                 PasswordSalt = passwordSaltA,
                 isAdmin = true
+            };
+
+            ctx.User.Add(user1);
+            ctx.User.Add(user2);
+
+            //CREATING REVIEWS
+            ctx.Review.Add(new Review() {
+                Comment = "Great Product",
+                Rating = 5
             });
+
+            ctx.Review.Add(new Review()
+            {
+                Comment = "fantastic Product",
+                Rating = 5
+            });
+
+            //CREATING STORIES
+            ctx.Story.Add(new Story()
+            {
+                Date = DateTime.Now,
+                Title = "Pls fcking work",
+                Text ="This is a Great Story",
+                User = user1
+            });
+            ctx.Story.Add(new Story()
+            {
+                Date = DateTime.Now,
+                Title = "u did fcking work, right?",
+                Text = "This is a Great jkwbdkaj wd",
+                User = user1
+            });
+            ctx.Story.Add(new Story()
+            {
+                Date = DateTime.Now,
+                Title = "BBC NEWS STORY",
+                Text = "TRUMP BEATS OBAMA IN ANIME CAT GIRL FIGHT",
+                User = user2
+
+            });
+
+            //CREATING PRODUCTS
+            ctx.Products.Add(new Product()
+            {
+                Name = "pls work wtf"
+            });
+
+            ctx.Products.Add(new Product()
+            {
+                Name = "a fcking shirt"
+            });
+
+
+            //HASHING PASSWORDS FOR USER METHODS
+            
 
             void CreatePasswordHash(string passwordToHash, out byte[] passwordHash, out byte[] passwordSalt)
             {

@@ -22,8 +22,9 @@ namespace WebShop.Infrastructure.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-           // modelBuilder.Entity<User>().HasOne(p => p.PreviousOwner).WithMany(o => o.OwnedPets).OnDelete(DeleteBehavior.SetNull);
-          // modelBuilder.Entity<Story>().HasOne(sto => sto.User).WithMany(user => user.Reviews).
+            // modelBuilder.Entity<User>().HasOne(p => p.PreviousOwner).WithMany(o => o.OwnedPets).OnDelete(DeleteBehavior.SetNull);
+            // modelBuilder.Entity<User>().HasMany(user => user.Stories).WithOne(story => story.User);
+            modelBuilder.Entity<Story>().HasOne(story => story.User).WithMany(user => user.Stories).OnDelete(DeleteBehavior.Cascade);
         }
         
         public DbSet<Review> Review { get; set; }
