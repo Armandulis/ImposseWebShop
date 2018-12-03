@@ -48,13 +48,18 @@ namespace WebShop.Infrastructure.Data
             //CREATING REVIEWS
             ctx.Review.Add(new Review() {
                 Comment = "Great Product",
-                Rating = 5
+                Rating = 5,
+                User = user1,
+                Product = new Product() { Name = "Shirt", Color = "Blue", Gender = "Male", Price = 200 }
+                
             });
 
             ctx.Review.Add(new Review()
             {
                 Comment = "fantastic Product",
-                Rating = 5
+                Rating = 5,
+                User = user2,
+                Product = new Product() { Name = "Dress", Color = "Blue", Gender = "Female", Price = 1200 }
             });
 
             //CREATING STORIES

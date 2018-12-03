@@ -79,7 +79,7 @@ namespace WebShopAPI.Controllers
 
         // DELETE: api/Products/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteProduct([FromRoute] int id)
+        public ActionResult<Product> DeleteProduct([FromRoute] int id)
         {
             if (!ModelState.IsValid)
             {
