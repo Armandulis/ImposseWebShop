@@ -10,12 +10,12 @@ namespace WebShop.Core.ApplicationService.Services
     public class UserService : IUserService
     {
         readonly IUserRepository _userRepo;
-     
+        readonly IAuthenticationHelper _authHelper;
 
-        public UserService(IUserRepository userRepo)
+        public UserService(IUserRepository userRepo, IAuthenticationHelper authenticationHelper)
         {
             _userRepo = userRepo;
-            
+            _authHelper = authenticationHelper;
         }
 
        
@@ -49,6 +49,19 @@ namespace WebShop.Core.ApplicationService.Services
         public User UpdateUser(User user)
         {
             return _userRepo.UserEdit(user);
+        }
+
+        public User GetByUsername(string username)
+        {
+            return _userRepo.GetAll().FirstOrDefault(u => u.Username == username);
+        }
+
+        public void SetPasswordInfo(User user, LoginInputModel login)
+        {
+            byte[] passHash, passSalt;
+            _authHelper.CreatePasswordHash(login.Password, out passHash, out passSalt);
+            user.PasswordHash = passHash;
+            user.PasswordSalt = passSalt;
         }
     }
 }

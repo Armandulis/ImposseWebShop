@@ -49,6 +49,23 @@ namespace WebShopAPI.Controllers
             return _userService.NewUser(user);
         }
 
+        [HttpPut]
+        public ActionResult<User> PutPassword([FromQuery] bool password, [FromBody] LoginInputModel login)
+        {
+            if (password)
+            {
+                User user = _userService.GetByUsername(login.Username);
+                if(user == null)
+                {
+                    return NotFound();
+                }
+                _userService.SetPasswordInfo(user, login);
+                _userService.UpdateUser(user);
+                return user;
+            }
+            return BadRequest();
+        }
+
         // PUT: api/User/5
         [HttpPut("{id}")]
         public ActionResult<User> Put(int id, [FromBody] User user)

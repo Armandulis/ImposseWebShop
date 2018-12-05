@@ -13,6 +13,8 @@ namespace WebShop.Core.ApplicationService
         List<User> ReadAllUsers();
         User FindUserByID(int id);
         User UpdateUser(User user);
+        User GetByUsername(string username);
+        void SetPasswordInfo(User user, LoginInputModel login);
         //List<Review> FindOwnedReviews(int id);
     }
 }

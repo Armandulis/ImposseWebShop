@@ -39,7 +39,7 @@ namespace WebShopAPI.Controllers
         [HttpPost]
         public ActionResult<Review> Post([FromBody] Review review)
         {
-            if (review.Rating == null) return BadRequest("Review must have Rating");
+            if (review.Rating < 1 || review.Rating > 5 ) return BadRequest("Review must have Rating");
             //if (review.Product == null) return BadRequest("Review must have Product");
             // if (review.User == null) return BadRequest("Review must have User");
 
