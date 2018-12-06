@@ -8,7 +8,7 @@ namespace WebShop.Infrastructure.Data
 {
     public class WebShopContext : DbContext
     {
-        public DbSet<Product> Products { get; set; }
+        
 
         public WebShopContext(DbContextOptions<WebShopContext> option) : base(option)
         {
@@ -30,6 +30,7 @@ namespace WebShop.Infrastructure.Data
         public DbSet<Review> Review { get; set; }
         public DbSet<Story> Story { get; set; }
         public DbSet<User> User { get; set; }
+        public DbSet<Product> Products { get; set; }
 
     }
 }
