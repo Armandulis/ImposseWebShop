@@ -69,21 +69,21 @@ namespace WebShop.Infrastructure.Data
             //CREATING STORIES
             ctx.Story.Add(new Story()
             {
-                Date = DateTime.Now,
+                Date = DateTime.Now.ToString("H:mm dd/MM/yyyy"),
                 Title = "Pls fcking work",
                 Text ="This is a Great Story",
                 User = user1
             });
             ctx.Story.Add(new Story()
             {
-                Date = DateTime.Now,
+                Date = DateTime.Now.ToString("H:mm dd/MM/yyyy"),
                 Title = "u did fcking work, right?",
                 Text = "This is a Great jkwbdkaj wd",
                 User = user1
             });
             ctx.Story.Add(new Story()
             {
-                Date = DateTime.Now,
+                Date = DateTime.Now.ToString("H:mm dd/MM/yyyy"),
                 Title = "BBC NEWS STORY",
                 Text = "TRUMP BEATS OBAMA IN ANIME CAT GIRL FIGHT",
                 User = user2
