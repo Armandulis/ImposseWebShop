@@ -72,6 +72,9 @@ namespace WebShopAPI
             services.AddScoped<IProductService, ProductService>();
             services.AddScoped<IProductRepository, ProductRepository>();
 
+            services.AddScoped<IBasketService, BasketService>();
+            services.AddScoped<IBasketRepository, BasketRepository>();
+
             services.AddSingleton<IAuthenticationHelper>(new AuthenticationHelper(secretBytes));
 
 

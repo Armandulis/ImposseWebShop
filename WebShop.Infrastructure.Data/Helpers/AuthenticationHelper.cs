@@ -34,7 +34,7 @@ namespace WebShop.Infrastructure.Data.Helpers
                 new Claim(ClaimTypes.Name, user.Username)
             };
 
-            if (user.isAdmin)
+            if (user.IsAdmin)
             {
                 claims.Add(new Claim(ClaimTypes.Role, "Administrator"));
             }

@@ -29,7 +29,7 @@ namespace WebShop.Infrastructure.Data
                 Username = "Admin",
                 PasswordHash = passwordHashAdmin,
                 PasswordSalt = passwordSaltAdmin,
-                isAdmin = true,
+                IsAdmin = true,
                 Picture = "https://img.thedailybeast.com/image/upload/c_crop,d_placeholder_euli9k,h_1440,w_2560,x_0,y_0/dpr_2.0/c_limit,w_740/fl_lossy,q_auto/v1531451526/180712-Weill--The-Creator-of-Pepe-hero_uionjj"
 
             };
@@ -41,16 +41,16 @@ namespace WebShop.Infrastructure.Data
                 Username = "User",
                 PasswordHash = passwordHashA,
                 PasswordSalt = passwordSaltA,
-                isAdmin = true,
+                IsAdmin = true,
                 Picture = "https://fsmedia.imgix.net/77/4f/7a/cf/6327/4cc2/a533/4fbb91a213ca/spongbob.jpeg?rect=0%2C47%2C750%2C375&dpr=2&auto=format%2Ccompress&w=650"
 
             };
 
-            ctx.User.Add(user1);
-            ctx.User.Add(user2);
+            ctx.Users.Add(user1);
+            ctx.Users.Add(user2);
 
             //CREATING REVIEWS
-            ctx.Review.Add(new Review() {
+            ctx.Reviews.Add(new Review() {
                 Comment = "Great Product",
                 Rating = 5,
                 User = user1,
@@ -58,7 +58,7 @@ namespace WebShop.Infrastructure.Data
                 
             });
 
-            ctx.Review.Add(new Review()
+            ctx.Reviews.Add(new Review()
             {
                 Comment = "fantastic Product",
                 Rating = 5,
@@ -67,21 +67,21 @@ namespace WebShop.Infrastructure.Data
             });
 
             //CREATING STORIES
-            ctx.Story.Add(new Story()
+            ctx.Stories.Add(new Story()
             {
                 Date = DateTime.Now.ToString("H:mm dd/MM/yyyy"),
                 Title = "Pls fcking work",
                 Text ="This is a Great Story",
                 User = user1
             });
-            ctx.Story.Add(new Story()
+            ctx.Stories.Add(new Story()
             {
                 Date = DateTime.Now.ToString("H:mm dd/MM/yyyy"),
                 Title = "u did fcking work, right?",
                 Text = "This is a Great jkwbdkaj wd",
                 User = user1
             });
-            ctx.Story.Add(new Story()
+            ctx.Stories.Add(new Story()
             {
                 Date = DateTime.Now.ToString("H:mm dd/MM/yyyy"),
                 Title = "BBC NEWS STORY",
@@ -101,9 +101,22 @@ namespace WebShop.Infrastructure.Data
                 Name = "a fcking shirt"
             });
 
+            //Create baskets
+            ctx.Baskets.Add(new Basket
+            {
+                User = user1,
+                Products = new List<Product>()
+            });
+
+            ctx.Baskets.Add(new Basket
+            {
+                User = user2,
+                Products = new List<Product>()
+            });
+
 
             //HASHING PASSWORDS FOR USER METHODS
-            
+
 
             void CreatePasswordHash(string passwordToHash, out byte[] passwordHash, out byte[] passwordSalt)
             {

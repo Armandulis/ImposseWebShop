@@ -19,41 +19,41 @@ namespace WebShop.Infrastructure.Data.Repositories
 
         public Review CreateReview(Review review)
         {
-            var newReview = _ctx.Review.Add(review).Entity;
+            var newReview = _ctx.Reviews.Add(review).Entity;
             _ctx.SaveChanges();
             return newReview;
         }
 
         public Review DeleteReview(int id)
         {
-            var deleteReview = _ctx.Review.Remove(GetReview(id)).Entity;
+            var deleteReview = _ctx.Reviews.Remove(GetReview(id)).Entity;
             _ctx.SaveChanges();
             return deleteReview;
         }
 
         public IEnumerable<Review> GetAllReviews()
         {
-            return _ctx.Review;
+            return _ctx.Reviews;
         }
 
         public Review GetReview(int id)
         {
-            return _ctx.Review.Include(r => r.User).Include(r => r.Product).FirstOrDefault(review => review.Id == id);
+            return _ctx.Reviews.Include(r => r.User).Include(r => r.Product).FirstOrDefault(review => review.Id == id);
         }
 
         public IEnumerable<Review> GetReviewsByProduct(int productId)
         {
-            return _ctx.Review.Where(r => r.Product.Id == productId).Include(r => r.User);
+            return _ctx.Reviews.Where(r => r.Product.Id == productId).Include(r => r.User);
         }
 
         public IEnumerable<Review> GetReviewsByUser(int userId)
         {
-            return _ctx.Review.Where(r => r.User.Id == userId).Include(r => r.Product);
+            return _ctx.Reviews.Where(r => r.User.Id == userId).Include(r => r.Product);
         }
 
         public Review UpdateReview(Review review)
         {
-            var updatedReview = _ctx.Review.Update(review).Entity;
+            var updatedReview = _ctx.Reviews.Update(review).Entity;
             _ctx.SaveChanges();
             return updatedReview;
         }
