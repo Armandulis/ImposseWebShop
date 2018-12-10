@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -37,7 +38,17 @@ namespace WebShop.Infrastructure.Data.Repositories
 
         public Review GetReview(int id)
         {
-            return _ctx.Review.FirstOrDefault(review => review.Id == id);
+            return _ctx.Review.Include(r => r.User).Include(r => r.Product).FirstOrDefault(review => review.Id == id);
+        }
+
+        public IEnumerable<Review> GetReviewsByProduct(int productId)
+        {
+            return _ctx.Review.Where(r => r.Product.Id == productId).Include(r => r.User);
+        }
+
+        public IEnumerable<Review> GetReviewsByUser(int userId)
+        {
+            return _ctx.Review.Where(r => r.User.Id == userId).Include(r => r.Product);
         }
 
         public Review UpdateReview(Review review)

@@ -37,6 +37,16 @@ namespace WebShop.Core.ApplicationService.Services
             return _repo.GetReview(id);
         }
 
+        public List<Review> GetReviewsByProduct(int productId)
+        {
+            return _repo.GetReviewsByProduct(productId).ToList();
+        }
+
+        public List<Review> GetReviewsByUser(int userId)
+        {
+            return _repo.GetReviewsByUser(userId).ToList();
+        }
+
         public Review UpdateReview(Review review)
         {
             return _repo.UpdateReview(review);

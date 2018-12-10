@@ -22,8 +22,16 @@ namespace WebShopAPI.Controllers
 
         // GET: api/Review
         [HttpGet]
-        public IEnumerable<Review> Get()
+        public IEnumerable<Review> Get([FromQuery] int userId, int productId)
         {
+            if (userId > 0)
+            {
+                return _reviewService.GetReviewsByUser(userId);
+            }
+            if(productId > 0)
+            {
+                return _reviewService.GetReviewsByProduct(productId);
+            }
             return _reviewService.GetAllReviews();
         }
 
@@ -33,7 +41,7 @@ namespace WebShopAPI.Controllers
         {
             if (id < 1) return BadRequest("Id must be greater then 0");
             else return _reviewService.GetReview(id);
-        }
+        }       
 
         // POST: api/Review
         [HttpPost]

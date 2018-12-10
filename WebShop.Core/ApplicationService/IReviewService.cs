@@ -21,5 +21,11 @@ namespace WebShop.Core.ApplicationService
 
         //delete
         Review DeleteReview(int id);
+
+        //Get reviews of a product
+        List<Review> GetReviewsByProduct(int productId);
+
+        //Get reviews by user
+        List<Review> GetReviewsByUser(int userId);
     }
 }
