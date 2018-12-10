@@ -28,12 +28,28 @@ namespace WebShopAPI.Controllers
             return _userService.ReadAllUsers();
         }
 
-        // GET: api/User/5
-        [HttpGet("{id}", Name = "GetUser")]
-        public ActionResult<User> Get(int id)
+        // ADD BACK IN IF NEEDED BUT BE SURE TO DELETE THE LOWER ONE WITH USERNAME
+        // we can also make  just a need controller for finding user name if we do actually need this 
+        //just text in the group if u have any questions
+
+        //// GET: api/User/5
+        //[HttpGet("{id}")]
+        //public ActionResult<User> Get(int id)
+        //{
+        //    if (id < 1) return BadRequest("Id must be greater then 0");
+        //    else return _userService.FindUserByID(id);
+
+        //}
+
+
+        // GET: api/User/Username
+        [HttpGet("{username}")]
+        public ActionResult<User> Get(string username)
         {
-            if (id < 1) return BadRequest("Id must be greater then 0");
-            else return _userService.FindUserByID(id);
+            var user = _userService.GetByUsername(username);
+            return user;
+
+
 
         }
 

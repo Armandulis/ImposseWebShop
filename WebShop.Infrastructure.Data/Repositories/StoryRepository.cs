@@ -20,7 +20,7 @@ namespace WebShop.Infrastructure.Data.Repositories
 
         public Story CreateStory(Story story)
         {
-            var newStory = _ctx.Story.Add(story).Entity;
+            var newStory = _ctx.Story.Attach(story).Entity;
             _ctx.SaveChanges();
             return newStory;
         }
