@@ -48,24 +48,7 @@ namespace WebShop.Infrastructure.Data
 
             ctx.Users.Add(user1);
             ctx.Users.Add(user2);
-
-            //CREATING REVIEWS
-            ctx.Reviews.Add(new Review() {
-                Comment = "Great Product",
-                Rating = 5,
-                User = user1,
-                Product = new Product() { Name = "Shirt", Color = "Blue", Gender = "Male", Price = 200 }
-                
-            });
-
-            ctx.Reviews.Add(new Review()
-            {
-                Comment = "fantastic Product",
-                Rating = 5,
-                User = user2,
-                Product = new Product() { Name = "Dress", Color = "Blue", Gender = "Female", Price = 1200 }
-            });
-
+            
             //CREATING STORIES
             ctx.Stories.Add(new Story()
             {
@@ -91,15 +74,84 @@ namespace WebShop.Infrastructure.Data
             });
 
             //CREATING PRODUCTS
-            ctx.Products.Add(new Product()
+            var product1 = ctx.Products.Add(new Product()
             {
-                Name = "pls work wtf"
+                Name = "shirt yas?",
+                Picture = "https://i.imgur.com/dmvqXtL.jpg",
+                Price = 25.99,
+                Description = "Computer science is the theory, experimentation, and engineering that " +
+                "form the basis for the design and use of computers. It involves the study of algorithms that" +
+                " process, store, and communicate digital information. A computer scientist specializes in the theory " +
+                "of computation and the design of computational systems.",
+                Gender = "Male",
+                Color = "White",
+                Type = "Polo",
+
+
+
+            }).Entity;
+
+            var product2 = ctx.Products.Add(new Product()
+            {
+                Name = "a fcking shirt",
+                Picture = "https://i.imgur.com/krCJM.jpg",
+                Price = 2299,
+                Description = "A shirt is a cloth garment for the upper body (from the neck to the waist). ..." +
+                " In British English, a shirt is more specifically a garment with a collar, sleeves with cuffs, " +
+                "and a full vertical opening with buttons or snaps (North Americans would call that a dress shirt, " +
+                "a specific type of collared shirt).",
+                Gender = "Male",
+                Color = "Black",
+                Type = "Shirt",
+            }).Entity;
+
+            var product3 = ctx.Products.Add(new Product()
+            {
+                Name = "Pepe Shirt",
+                Picture = "https://i.imgur.com/tBTltNJ.jpg",
+                Price = 2299,
+                Description = "Pepe the Frog (/ˈpɛpeɪ/) is a popular Internet meme. A green anthropomorphic frog " +
+                "with a humanoid body, Pepe originated in a comic by Matt Furie called Boy's Club. It became an " +
+                "Internet meme when its popularity steadily grew across Myspace, Gaia Online and 4chan in 2008.",
+                Gender = "Male",
+                Color = "Black",
+                Type = "Shirt",
+            }).Entity;
+
+            var product4 = ctx.Products.Add(new Product()
+            {
+                Name = "Nicolas Shirt",
+                Picture = "https://i.kym-cdn.com/entries/icons/original/000/017/411/1424933369558.jpg",
+                Price = 2299,
+                Description = "Mocking SpongeBob, also known as Spongemock, refers to an image macro " +
+                "featuring cartoon character SpongeBob SquarePants in which people use a picture of SpongeBob " +
+                "to indicate a mocking tone towards an opinion or point of view.",
+                Gender = "Male",
+                Color = "Black",
+                Type = "Shirt",
+            }).Entity;
+
+            //CREATING REVIEWS
+            ctx.Reviews.Add(new Review()
+            {
+                Comment = "Great Product",
+                Rating = 5,
+                User = user1,
+                Product = product1
+
+
+
             });
 
-            ctx.Products.Add(new Product()
+            ctx.Reviews.Add(new Review()
             {
-                Name = "a fcking shirt"
+                Comment = "fantastic Product",
+                Rating = 5,
+                User = user2,
+                Product = product2
             });
+
+
 
             //Create baskets
             ctx.Baskets.Add(new Basket
