@@ -10,7 +10,7 @@ namespace WebShop.Infrastructure.Data
         public static void SeedDB(WebShopContext ctx)
         {
             // DELETES AND CREATES DATABASE
-            ctx.Database.EnsureDeleted();
+            //ctx.Database.EnsureDeleted();
             ctx.Database.EnsureCreated();
 
 

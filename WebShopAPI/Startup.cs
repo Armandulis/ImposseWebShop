@@ -119,6 +119,13 @@ namespace WebShopAPI
                 app.UseDeveloperExceptionPage();
                 app.UseCors(builder => builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
                 app.UseHsts();
+
+                using (var scope = app.ApplicationServices.CreateScope())
+                {
+                    var ctx = scope.ServiceProvider.GetService<WebShopContext>();
+                    DBSeed.SeedDB(ctx);
+                }
+
             }
 
             
