@@ -16,12 +16,10 @@ namespace WebShopAPI.Controllers
     public class BasketController : ControllerBase
     {
         private readonly IBasketService _service;
-        private readonly WebShopContext _ctx;
 
-        public BasketController(IBasketService basketService, WebShopContext context)
+        public BasketController(IBasketService basketService)
         {
             _service = basketService;
-            _ctx = context;
         }
 
         // GET: api/Basket/5
@@ -52,8 +50,13 @@ namespace WebShopAPI.Controllers
 
         // DELETE: api/Basket/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public void Delete(int id, [FromBody] Product product)
         {
+            if (product != null)
+            {
+                _service.DeleteFromBasket(id, product);
+                return;
+            }
             _service.DeleteBasket(id);
         }
     }

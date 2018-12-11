@@ -18,7 +18,6 @@ namespace WebShop.Core.ApplicationService.Services
         public Basket AddToBasket(int id, Product product)
         {
             var basket = GetBasket(id);
-            basket.Products.Add(product);
             _repo.UpdateBasket(basket, product);
             return basket;
 
@@ -35,6 +34,11 @@ namespace WebShop.Core.ApplicationService.Services
         public Basket DeleteBasket(int id)
         {
             return _repo.DeleteBasket(id);
+        }
+
+        public void DeleteFromBasket(int id, Product product)
+        {
+            _repo.DeleteFromBasket(id, product);
         }
 
         public Basket GetBasket(int id)

@@ -13,5 +13,6 @@ namespace WebShop.Core.ApplicationService
         void ClearBasket(int id);
         Basket DeleteBasket(int id);
         List<Product> GetProductsInBasket(int basketId);
+        void DeleteFromBasket(int id, Product product);
     }
 }

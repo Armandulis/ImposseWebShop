@@ -9,5 +9,6 @@ namespace WebShop.Core.DomainService
         Basket NewBasket(Basket basket);
         void UpdateBasket(Basket basket, Product product = null);
         Basket GetBasketIncludeUserAndProducts(int id);
+        void DeleteFromBasket(int id, Product product);
     }
 }

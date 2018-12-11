@@ -25,6 +25,16 @@ namespace WebShop.Infrastructure.Data.Repositories
             return basket;
         }
 
+        public void DeleteFromBasket(int id, Product product)
+        {
+            var basket = GetBasketIncludeUserAndProducts(id);
+            product = basket.Products.FirstOrDefault(p => p.Id == product.Id);
+            basket.Products.Remove(product);
+            _ctx.Entry(basket).Collection(b => b.Products).IsModified = true;
+            _ctx.Attach(basket).State = EntityState.Modified;
+            _ctx.SaveChanges();
+        }
+
         public Basket GetBasket(int id)
         {
             return _ctx.Baskets.FirstOrDefault(b => b.User.Id == id);
