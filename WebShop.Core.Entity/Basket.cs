@@ -4,14 +4,10 @@ using System.Text;
 
 namespace WebShop.Core.Entity
 {
-    public class Story
+    public class Basket
     {
         public int Id { get; set; }
-        public string Date { get; set; }
-        public string Title { get; set; }
-        public string Text { get; set; }
         public User User { get; set; }
-
-
+        public List<Product> Products { get; set; }
     }
 }

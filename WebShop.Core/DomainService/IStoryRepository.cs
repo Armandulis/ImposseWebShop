@@ -14,7 +14,7 @@ namespace WebShop.Core.DomainService
 
         //Read
         Story GetStory(int id);
-        IEnumerable<Story> GetAllStories();
+        IEnumerable<Story> GetAllStories(Filter filter = null);
 
         //Update
         Story UpdateStory(Story story);

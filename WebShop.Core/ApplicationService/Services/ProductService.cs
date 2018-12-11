@@ -26,9 +26,9 @@ namespace WebShop.Core.ApplicationService.Services
             return _repo.DeleteProduct(id);
         }
 
-        public List<Product> GetAllProducts()
+        public List<Product> GetAllProducts(Filter filter)
         {
-            return _repo.GetAllProducts().ToList();
+            return _repo.GetAllProducts(filter).ToList();
         }
 
         public Product GetProductById(int id)

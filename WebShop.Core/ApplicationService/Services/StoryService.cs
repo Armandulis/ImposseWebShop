@@ -24,6 +24,7 @@ namespace WebShop.Core.ApplicationService.Services
         //Create
         public Story CreateStory(Story story)
         {
+            story.Date = DateTime.Now.ToString("H:mm dd/MM/yyyy");
             return _Repo.CreateStory(story);
         }
 
@@ -36,9 +37,9 @@ namespace WebShop.Core.ApplicationService.Services
 
 
         //Read
-        public List<Story> GetAllStories()
+        public List<Story> GetAllStories(Filter filter)
         {
-            return _Repo.GetAllStories().ToList();
+            return _Repo.GetAllStories(filter).OrderByDescending(story => story.Id).ToList();
         }
 
         public Story GetStory(int id)

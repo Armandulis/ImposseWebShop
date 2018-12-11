@@ -21,5 +21,11 @@ namespace WebShop.Core.DomainService
 
         //delete
         Review DeleteReview(int id);
+
+        //Get reviews by product
+        IEnumerable<Review> GetReviewsByProduct(int productId);
+
+        //Get reviews by users
+        IEnumerable<Review> GetReviewsByUser(int userId);
     }
 }

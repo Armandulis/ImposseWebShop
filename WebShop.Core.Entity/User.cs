@@ -12,11 +12,12 @@ namespace WebShop.Core.Entity
         public string Lastname { get; set; }
         public byte[] PasswordHash { get; set; }
         public byte[] PasswordSalt { get; set; }
-        public bool isAdmin { get; set; }
+        public bool IsAdmin { get; set; }
         public string Email { get; set; }
         public string Picture { get; set; }
         public List<Story> Stories { get; set; }
         public List<Review> Reviews { get; set; }
+        public Basket Basket { get; set; }
 
     }
 }

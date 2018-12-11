@@ -7,7 +7,7 @@ namespace WebShop.Core.DomainService
 {
     public interface IProductRepository
     {
-        IEnumerable<Product> GetAllProducts();
+        IEnumerable<Product> GetAllProducts(Filter filter = null);
 
         Product CreateProduct(Product product);
 

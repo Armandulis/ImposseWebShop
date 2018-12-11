@@ -7,7 +7,7 @@ namespace WebShop.Core.ApplicationService
 {
     public interface IProductService
     {
-        List<Product> GetAllProducts();
+        List<Product> GetAllProducts(Filter filter = null);
 
         Product GetProductById(int id);
 
