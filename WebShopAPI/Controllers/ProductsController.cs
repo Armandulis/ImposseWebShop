@@ -23,9 +23,13 @@ namespace WebShopAPI.Controllers
 
         // GET: api/Products
         [HttpGet]
-        public IEnumerable<Product> GetProducts()
+        public IEnumerable<Product> GetProducts([FromQuery] Filter filter)
         {
-            return _productService.GetAllProducts();
+            if (filter.CurrentPage <= 0 || filter.ItemsPerPage <= 0)
+            {
+                return _productService.GetAllProducts();
+            }
+            return _productService.GetAllProducts(filter);
         }
 
         // GET: api/Products/5

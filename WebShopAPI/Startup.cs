@@ -25,12 +25,14 @@ namespace WebShopAPI
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
+        public Startup(IConfiguration configuration, IHostingEnvironment env)
         {
             Configuration = configuration;
+            Environment = env;
         }
 
         public IConfiguration Configuration { get; }
+        public IHostingEnvironment Environment { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
@@ -55,8 +57,19 @@ namespace WebShopAPI
                 };
             });
 
-            services.AddDbContext<WebShopContext>(
+            if (Environment.IsDevelopment())
+            {
+                services.AddDbContext<WebShopContext>(
                 option => option.UseSqlite("Data Source=webShopApp.db"));
+
+            }
+            else
+            {
+                services.AddDbContext<WebShopContext>(opt =>
+                opt.UseSqlServer(Configuration.GetConnectionString("defaultConnection")));
+            }
+
+            
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
@@ -103,6 +116,8 @@ namespace WebShopAPI
             }
             else
             {
+                app.UseDeveloperExceptionPage();
+                app.UseCors(builder => builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
                 app.UseHsts();
             }
 

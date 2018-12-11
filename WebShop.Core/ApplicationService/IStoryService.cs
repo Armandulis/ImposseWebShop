@@ -14,7 +14,7 @@ namespace WebShop.Core.ApplicationService
 
         //read
         Story GetStory(int id);
-        List<Story> GetAllStories();
+        List<Story> GetAllStories(Filter filter = null);
 
         //update
         Story UpdateStory(Story story);

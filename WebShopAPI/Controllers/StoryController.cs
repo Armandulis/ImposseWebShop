@@ -25,9 +25,13 @@ namespace WebShopAPI.Controllers
 
         // GET: api/Story
         [HttpGet]
-        public IEnumerable<Story> Get()
+        public IEnumerable<Story> Get([FromQuery] Filter filter)
         {
-            return _storyService.GetAllStories();
+            if (filter.CurrentPage <= 0 || filter.ItemsPerPage <= 0)
+            {
+                return _storyService.GetAllStories();
+            }
+            return _storyService.GetAllStories(filter);
         }
 
         // GET: api/Story/5

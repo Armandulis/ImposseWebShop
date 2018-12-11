@@ -4,7 +4,9 @@ using System.Text;
 
 namespace WebShop.Core.Entity
 {
-    class Filter
+    public class Filter
     {
+        public int ItemsPerPage { get; set; }
+        public int CurrentPage { get; set; }
     }
 }

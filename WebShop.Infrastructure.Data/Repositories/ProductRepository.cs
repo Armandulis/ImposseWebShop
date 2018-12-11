@@ -40,9 +40,16 @@ namespace WebShop.Infrastructure.Data.Repositories
             }
         }
 
-        public IEnumerable<Product> GetAllProducts()
+        public IEnumerable<Product> GetAllProducts(Filter filter)
         {
-            return _ctx.Products;
+            if (filter != null)
+            {
+                return _ctx.Products.Skip(filter.ItemsPerPage * (filter.CurrentPage - 1)).Take(filter.ItemsPerPage);
+            }
+            else
+            {
+                return _ctx.Products;
+            }
         }
 
         public Product UpdateProduct(Product product)
