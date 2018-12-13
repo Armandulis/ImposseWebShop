@@ -28,6 +28,13 @@ namespace WebShopAPI.Controllers
             return _userService.ReadAllUsers();
         }
 
+        [Route("usernames")]
+        [HttpGet]
+        public List<string> GetUsernames()
+        {
+            return _userService.GetUsernames();
+        }
+
         // ADD BACK IN IF NEEDED BUT BE SURE TO DELETE THE LOWER ONE WITH USERNAME
         // we can also make  just a need controller for finding user name if we do actually need this 
         //just text in the group if u have any questions

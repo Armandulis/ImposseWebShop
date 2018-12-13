@@ -123,7 +123,7 @@ namespace WebShopAPI
                 using (var scope = app.ApplicationServices.CreateScope())
                 {
                     var ctx = scope.ServiceProvider.GetService<WebShopContext>();
-                    DBSeed.SeedDB(ctx);
+                    //DBSeed.SeedDB(ctx);
                 }
 
             }

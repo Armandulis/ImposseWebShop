@@ -15,6 +15,7 @@ namespace WebShop.Core.ApplicationService
         User UpdateUser(User user);
         User GetByUsername(string username);
         void SetPasswordInfo(User user, LoginInputModel login);
+        List<string> GetUsernames();
         //List<Review> FindOwnedReviews(int id);
     }
 }
