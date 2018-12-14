@@ -10,7 +10,7 @@ namespace WebShop.Infrastructure.Data
         public static void SeedDB(WebShopContext ctx)
         {
             // DELETES AND CREATES DATABASE
-            //ctx.Database.EnsureDeleted();
+            ctx.Database.EnsureDeleted();
             ctx.Database.EnsureCreated();
 
 
@@ -150,22 +150,6 @@ namespace WebShop.Infrastructure.Data
                 User = user2,
                 Product = product2
             });
-
-
-
-            //Create baskets
-            ctx.Baskets.Add(new Basket
-            {
-                User = user1,
-                Products = new List<Product>()
-            });
-
-            ctx.Baskets.Add(new Basket
-            {
-                User = user2,
-                Products = new List<Product>()
-            });
-
 
             //HASHING PASSWORDS FOR USER METHODS
 

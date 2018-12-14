@@ -30,9 +30,12 @@ namespace WebShop.Infrastructure.Data.Repositories
 
         public User UserAdd(User entity)
         {
-         var user = _ctx.Users.Add(entity).Entity;
+            _ctx.Attach(entity).State = EntityState.Added;
+
+            entity.Basket = new Basket() { User = entity };
+            _ctx.Entry(entity).Reference(u => u.Basket).IsModified = true;
             _ctx.SaveChanges();
-            return user;
+            return entity;
         }
 
         public User UserEdit(User entity)
