@@ -19,9 +19,16 @@ namespace WebShop.Infrastructure.Data.Repositories
 
         public Review CreateReview(Review review)
         {
-            var newReview = _ctx.Reviews.Add(review).Entity;
+            if (review.Product != null && review.User != null)
+            {
+                _ctx.Products.Attach(review.Product).State = EntityState.Unchanged;
+                _ctx.Users.Attach(review.User).State = EntityState.Unchanged;
+            }
+            
+            _ctx.Reviews.Attach(review).State = EntityState.Added;
             _ctx.SaveChanges();
-            return newReview;
+            
+            return review;
         }
 
         public Review DeleteReview(int id)
