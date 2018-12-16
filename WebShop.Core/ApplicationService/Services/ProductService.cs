@@ -33,7 +33,7 @@ namespace WebShop.Core.ApplicationService.Services
 
         public Product GetProductById(int id)
         {
-            return _repo.GetAllProducts().FirstOrDefault(p => p.Id == id);
+            return _repo.GetProductById(id);
         }
 
         public Product UpdateProduct(Product product)

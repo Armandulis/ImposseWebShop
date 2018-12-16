@@ -9,6 +9,8 @@ namespace WebShop.Core.DomainService
     {
         IEnumerable<Product> GetAllProducts(Filter filter = null);
 
+        Product GetProductById(int id);
+
         Product CreateProduct(Product product);
 
         Product UpdateProduct(Product product);
