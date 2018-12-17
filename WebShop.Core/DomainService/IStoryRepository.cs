@@ -7,19 +7,40 @@ namespace WebShop.Core.DomainService
 {
     public interface IStoryRepository
     {
-        //CRUD
-
-        //Create
+        /// <summary>
+        /// Add a new story to the database.
+        /// </summary>
+        /// <param name="story"></param>
+        /// <returns></returns>
         Story CreateStory(Story story);
 
-        //Read
+        /// <summary>
+        /// Get a story from the database by id.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         Story GetStory(int id);
+
+        /// <summary>
+        /// Get all stories in the database,
+        /// with an optional filter for paging purposes.
+        /// </summary>
+        /// <param name="filter"></param>
+        /// <returns></returns>
         IEnumerable<Story> GetAllStories(Filter filter = null);
 
-        //Update
+        /// <summary>
+        /// Update a story in the database.
+        /// </summary>
+        /// <param name="story"></param>
+        /// <returns></returns>
         Story UpdateStory(Story story);
 
-        //Delete
+        /// <summary>
+        /// Delete a story in the database by id.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         Story DeleteStory(int id);
 
 
