@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using WebShop.Core.ApplicationService;
@@ -44,6 +45,7 @@ namespace WebShopAPI.Controllers
         }       
 
         // POST: api/Review
+        [Authorize]
         [HttpPost]
         public ActionResult<Review> Post([FromBody] Review review)
         {
@@ -55,6 +57,7 @@ namespace WebShopAPI.Controllers
         }
 
         // PUT: api/Review/5
+        [Authorize]
         [HttpPut("{id}")]
         public ActionResult<Review> Put(int id, [FromBody] Review review)
         {
@@ -66,6 +69,7 @@ namespace WebShopAPI.Controllers
         }
 
         // DELETE: api/ApiWithActions/5
+        [Authorize]
         [HttpDelete("{id}")]
         public ActionResult<Review> Delete(int id)
         {

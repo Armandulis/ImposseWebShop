@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -52,6 +53,7 @@ namespace WebShopAPI.Controllers
         }
 
         // PUT: api/Products/5
+        [Authorize(Roles = "Administrator")]
         [HttpPut("{id}")]
         public ActionResult<Product> PutProduct([FromRoute] int id, [FromBody] Product product)
         {
@@ -69,6 +71,7 @@ namespace WebShopAPI.Controllers
         }
 
         // POST: api/Products
+        [Authorize(Roles = "Administrator")]
         [HttpPost]
         public ActionResult<Product> PostProduct([FromBody] Product product)
         {
@@ -82,6 +85,7 @@ namespace WebShopAPI.Controllers
         }
 
         // DELETE: api/Products/5
+        [Authorize(Roles = "Administrator")]
         [HttpDelete("{id}")]
         public ActionResult<Product> DeleteProduct([FromRoute] int id)
         {
