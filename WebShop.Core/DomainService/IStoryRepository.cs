@@ -22,12 +22,11 @@ namespace WebShop.Core.DomainService
         Story GetStory(int id);
 
         /// <summary>
-        /// Get all stories in the database,
-        /// with an optional filter for paging purposes.
+        /// Get all stories in the database
         /// </summary>
         /// <param name="filter"></param>
         /// <returns></returns>
-        IEnumerable<Story> GetAllStories(Filter filter = null);
+        IEnumerable<Story> GetAllStories();
 
         /// <summary>
         /// Update a story in the database.
