@@ -65,7 +65,7 @@ namespace WebShopAPI.Controllers
             {
                 return BadRequest();
             }
-            return Ok(_reviewService.UpdateReview(review));
+            return _reviewService.UpdateReview(review);
         }
 
         // DELETE: api/ApiWithActions/5
@@ -79,7 +79,7 @@ namespace WebShopAPI.Controllers
                 return StatusCode(404, "Did not find review with ID " + id);
             }
 
-            return Ok($"Customer with Id: {id} is Deleted");
+            return review;
 
         }
     }
