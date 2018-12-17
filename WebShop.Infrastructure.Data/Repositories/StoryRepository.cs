@@ -38,7 +38,7 @@ namespace WebShop.Infrastructure.Data.Repositories
         {
             if (filter != null)
             {
-                return _ctx.Stories.Skip(filter.ItemsPerPage * (filter.CurrentPage - 1)).Take(filter.ItemsPerPage);
+                return _ctx.Stories.Include(s => s.User).Skip(filter.ItemsPerPage * (filter.CurrentPage - 1)).Take(filter.ItemsPerPage);
             }
             else
             {
