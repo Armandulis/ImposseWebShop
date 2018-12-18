@@ -90,6 +90,15 @@ namespace WebShopAPI
 
             services.AddSingleton<IAuthenticationHelper>(new AuthenticationHelper(secretBytes));
 
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllowSpecificOrigin",
+                    builder => builder
+                        .WithOrigins("https://imposseweb.firebaseapp.com/").AllowAnyHeader().AllowAnyMethod()
+                        .WithOrigins("http://localhost:4200").AllowAnyHeader().AllowAnyMethod()
+                    );
+            });
+                
 
             services.AddMvc().AddJsonOptions(options => {
                 options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
@@ -105,7 +114,7 @@ namespace WebShopAPI
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                app.UseCors(builder => builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+                app.UseCors("AllowSpecificOrigin");
 
                 using (var scope = app.ApplicationServices.CreateScope())
                 {
@@ -117,9 +126,7 @@ namespace WebShopAPI
             else
             {
                 app.UseDeveloperExceptionPage();
-                app.UseCors(builder => builder.WithOrigins("https://imposseweb.firebaseapp.com/").AllowAnyHeader().AllowAnyMethod()
-                                              .WithOrigins("http://localhost:4200").AllowAnyHeader().AllowAnyMethod()
-                );
+                app.UseCors("AllowSpecificOrigin");
                 app.UseHsts();
 
                 using (var scope = app.ApplicationServices.CreateScope())
