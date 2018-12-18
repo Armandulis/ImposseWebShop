@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
@@ -49,11 +50,15 @@ namespace WebShopAPI.Controllers
         [HttpPost]
         public ActionResult<Review> Post([FromBody] Review review)
         {
-            if (review.Rating < 1 || review.Rating > 5 ) return BadRequest("Review must have rating between one and five");
-            //if (review.Product == null) return BadRequest("Review must have Product");
-            // if (review.User == null) return BadRequest("Review must have User");
-
-            else return _reviewService.CreateReview(review);
+            try
+            {
+                return _reviewService.CreateReview(review);
+            }
+            catch (InvalidDataException e)
+            {
+                return BadRequest(e.Message);
+            }
+            
         }
 
         // PUT: api/Review/5

@@ -4,6 +4,7 @@ using System.Text;
 using System.Linq;
 using WebShop.Core.DomainService;
 using WebShop.Core.Entity;
+using System.IO;
 
 namespace WebShop.Core.ApplicationService.Services
 {
@@ -18,12 +19,21 @@ namespace WebShop.Core.ApplicationService.Services
 
         public Product CreateProduct(Product product)
         {
+            if (product.Name == null || product.Description == null || product.Price <= 0)
+            {
+                throw new InvalidDataException("A product must have a name, description and price.");
+            }
             return _repo.CreateProduct(product);
         }
 
         public Product DeleteProduct(int id)
         {
-            return _repo.DeleteProduct(id);
+            var productToDelete = _repo.DeleteProduct(id);
+            if (productToDelete == null)
+            {
+                throw new Exception("No such product in the database");
+            }
+            return productToDelete;
         }
 
         public List<Product> GetAllProducts(Filter filter)
@@ -33,7 +43,12 @@ namespace WebShop.Core.ApplicationService.Services
 
         public Product GetProductById(int id)
         {
-            return _repo.GetProductById(id);
+            var product = _repo.GetProductById(id);
+            if (product == null)
+            {
+                throw new Exception("No such product in the database.");
+            }
+            return product;
         }
 
         public Product UpdateProduct(Product product)
