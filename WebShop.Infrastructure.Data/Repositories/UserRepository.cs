@@ -25,7 +25,7 @@ namespace WebShop.Infrastructure.Data.Repositories
 
         public User UserGet(int id)
         {
-            return _ctx.Users.Include(user => user.Stories).FirstOrDefault(b => b.Id == id);
+            return _ctx.Users.Include(user => user.Stories).Include(u => u.Reviews).FirstOrDefault(b => b.Id == id);
         }
 
         public User UserAdd(User entity)
