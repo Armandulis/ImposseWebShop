@@ -33,7 +33,7 @@ namespace WebShop.Core.ApplicationService.Services
             {
                 throw new Exception("No such product in the database");
             }
-            return productToDelete
+            return productToDelete;
         }
 
         public List<Product> GetAllProducts(Filter filter)
