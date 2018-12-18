@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
@@ -37,19 +38,15 @@ namespace WebShopAPI.Controllers
         [HttpGet("{id}")]
         public ActionResult<Product> GetProduct([FromRoute] int id)
         {
-            if (!ModelState.IsValid)
+            try
             {
-                return BadRequest(ModelState);
+                return _productService.GetProductById(id);
             }
-
-            var product = _productService.GetProductById(id);
-
-            if (product == null)
+            catch (Exception e)
             {
-                return NotFound();
-            }
 
-            return Ok(product);
+                return NotFound(e.Message);
+            }
         }
 
         // PUT: api/Products/5
@@ -75,12 +72,14 @@ namespace WebShopAPI.Controllers
         [HttpPost]
         public ActionResult<Product> PostProduct([FromBody] Product product)
         {
-            if (!ModelState.IsValid)
+            try
             {
-                return BadRequest(ModelState);
+                return _productService.CreateProduct(product);
             }
-
-            return _productService.CreateProduct(product);
+            catch (InvalidDataException e)
+            {
+                return BadRequest(e.Message);
+            }
 
         }
 
@@ -89,20 +88,15 @@ namespace WebShopAPI.Controllers
         [HttpDelete("{id}")]
         public ActionResult<Product> DeleteProduct([FromRoute] int id)
         {
-            if (!ModelState.IsValid)
+            try
             {
-                return BadRequest(ModelState);
+                return _productService.DeleteProduct(id);
             }
-
-            var product = _productService.GetProductById(id);
-            if (product == null)
+            catch (Exception e)
             {
-                return NotFound();
+
+                return BadRequest(e.Message);
             }
-
-            _productService.DeleteProduct(id);
-
-            return Ok(product);
         }
 
     }

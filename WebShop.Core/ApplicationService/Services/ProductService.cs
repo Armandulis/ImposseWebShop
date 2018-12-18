@@ -29,7 +29,7 @@ namespace WebShop.Core.ApplicationService.Services
         public Product DeleteProduct(int id)
         {
             var productToDelete = _repo.DeleteProduct(id);
-            if (productToDelete == null)
+            if (productToDelete == null || id <= 0)
             {
                 throw new Exception("No such product in the database");
             }
@@ -44,9 +44,9 @@ namespace WebShop.Core.ApplicationService.Services
         public Product GetProductById(int id)
         {
             var product = _repo.GetProductById(id);
-            if (product == null)
+            if (product == null || id <= 0)
             {
-                throw new Exception("No such product in the database.");
+                throw new Exception("No such product in the database");
             }
             return product;
         }
