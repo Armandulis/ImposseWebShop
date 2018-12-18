@@ -117,7 +117,9 @@ namespace WebShopAPI
             else
             {
                 app.UseDeveloperExceptionPage();
-                app.UseCors(builder => builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+                app.UseCors(builder => builder.WithOrigins("https://imposseweb.firebaseapp.com/").AllowAnyHeader().AllowAnyMethod()
+                                              .WithOrigins("http://localhost:4200").AllowAnyHeader().AllowAnyMethod()
+                );
                 app.UseHsts();
 
                 using (var scope = app.ApplicationServices.CreateScope())
