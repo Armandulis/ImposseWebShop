@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using WebShop.Core.ApplicationService.Services;
@@ -19,7 +20,14 @@ namespace WebShop.Core.ApplicationService.Services
 
         public Review CreateReview(Review review)
         {
-            return _repo.CreateReview(review);
+            if (review.User == null || review.User.Id <= 0)
+                throw new InvalidDataException("To create a Review you need a User");
+            if (review.Product == null)
+                throw new InvalidDataException("Review needs a Product");
+            if (review.Rating < 1 || review.Rating > 5)
+                throw new InvalidDataException("Review must have a rating between 1 and 5");
+
+                return _repo.CreateReview(review);
         }
 
         public Review DeleteReview(int id)
