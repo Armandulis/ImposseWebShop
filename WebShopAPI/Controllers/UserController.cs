@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using WebShop.Core.ApplicationService;
@@ -22,25 +23,20 @@ namespace WebShopAPI.Controllers
         }
 
         // GET: api/User
+        [Authorize(Roles = "Administrator")]
         [HttpGet]
         public IEnumerable<User> Get()
         {
             return _userService.ReadAllUsers();
         }
 
-        // ADD BACK IN IF NEEDED BUT BE SURE TO DELETE THE LOWER ONE WITH USERNAME
-        // we can also make  just a need controller for finding user name if we do actually need this 
-        //just text in the group if u have any questions
-
-        //// GET: api/User/5
-        //[HttpGet("{id}")]
-        //public ActionResult<User> Get(int id)
-        //{
-        //    if (id < 1) return BadRequest("Id must be greater then 0");
-        //    else return _userService.FindUserByID(id);
-
-        //}
-
+        // GET: api/User/usernames
+        [Route("usernames")]
+        [HttpGet]
+        public List<string> GetUsernames()
+        {
+            return _userService.GetUsernames();
+        }
 
         // GET: api/User/Username
         [HttpGet("{username}")]
@@ -48,9 +44,6 @@ namespace WebShopAPI.Controllers
         {
             var user = _userService.GetByUsername(username);
             return user;
-
-
-
         }
 
         // POST: api/User
@@ -83,6 +76,7 @@ namespace WebShopAPI.Controllers
         }
 
         // PUT: api/User/5
+        [Authorize]
         [HttpPut("{id}")]
         public ActionResult<User> Put(int id, [FromBody] User user)
         {
@@ -100,6 +94,7 @@ namespace WebShopAPI.Controllers
         }
 
         // DELETE: api/ApiWithActions/5
+        [Authorize]
         [HttpDelete("{id}")]
         public ActionResult<User> Delete(int id)
         {

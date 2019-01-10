@@ -52,6 +52,11 @@ namespace WebShop.Infrastructure.Data.Repositories
             }
         }
 
+        public Product GetProductById(int id)
+        {
+            return _ctx.Products.Include(p => p.Reviews).ThenInclude(r => r.User).FirstOrDefault(p => p.Id == id);
+        }
+
         public Product UpdateProduct(Product product)
         {
             _ctx.Products.Attach(product).State = EntityState.Modified;

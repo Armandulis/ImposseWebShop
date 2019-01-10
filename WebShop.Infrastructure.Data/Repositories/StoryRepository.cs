@@ -34,16 +34,9 @@ namespace WebShop.Infrastructure.Data.Repositories
 
         }
 
-        public IEnumerable<Story> GetAllStories(Filter filter)
+        public IEnumerable<Story> GetAllStories()
         {
-            if (filter != null)
-            {
-                return _ctx.Stories.Skip(filter.ItemsPerPage * (filter.CurrentPage - 1)).Take(filter.ItemsPerPage);
-            }
-            else
-            {
-                return _ctx.Stories.Include(story => story.User);    
-            } 
+            return _ctx.Stories.Include(story => story.User);     
         }
 
         public Story GetStory(int id)

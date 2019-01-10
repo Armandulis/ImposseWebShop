@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using WebShop.Core.ApplicationService;
@@ -44,17 +46,23 @@ namespace WebShopAPI.Controllers
         }       
 
         // POST: api/Review
+        [Authorize]
         [HttpPost]
         public ActionResult<Review> Post([FromBody] Review review)
         {
-            if (review.Rating < 1 || review.Rating > 5 ) return BadRequest("Review must have Rating");
-            //if (review.Product == null) return BadRequest("Review must have Product");
-            // if (review.User == null) return BadRequest("Review must have User");
-
-            else return _reviewService.CreateReview(review);
+            try
+            {
+                return _reviewService.CreateReview(review);
+            }
+            catch (InvalidDataException e)
+            {
+                return BadRequest(e.Message);
+            }
+            
         }
 
         // PUT: api/Review/5
+        [Authorize]
         [HttpPut("{id}")]
         public ActionResult<Review> Put(int id, [FromBody] Review review)
         {
@@ -62,10 +70,11 @@ namespace WebShopAPI.Controllers
             {
                 return BadRequest();
             }
-            return Ok(_reviewService.UpdateReview(review));
+            return _reviewService.UpdateReview(review);
         }
 
         // DELETE: api/ApiWithActions/5
+        [Authorize]
         [HttpDelete("{id}")]
         public ActionResult<Review> Delete(int id)
         {
@@ -75,7 +84,7 @@ namespace WebShopAPI.Controllers
                 return StatusCode(404, "Did not find review with ID " + id);
             }
 
-            return Ok($"Customer with Id: {id} is Deleted");
+            return review;
 
         }
     }

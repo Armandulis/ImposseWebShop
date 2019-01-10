@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -65,6 +66,12 @@ namespace WebShopAPI
             }
             else
             {
+                services.AddHttpsRedirection(options =>
+                {
+                    options.RedirectStatusCode = StatusCodes.Status308PermanentRedirect;
+                    options.HttpsPort = 443;
+                });
+
                 services.AddDbContext<WebShopContext>(opt =>
                 opt.UseSqlServer(Configuration.GetConnectionString("defaultConnection")));
             }
@@ -90,6 +97,15 @@ namespace WebShopAPI
 
             services.AddSingleton<IAuthenticationHelper>(new AuthenticationHelper(secretBytes));
 
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllowSpecificOrigin",
+                    builder => builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod()
+                        //.WithOrigins("https://impossewebshop2018angular.azurewebsites.net/").AllowAnyHeader().AllowAnyMethod()
+                        //.WithOrigins("http://localhost:4200").AllowAnyHeader().AllowAnyMethod()
+                    );
+            });
+                
 
             services.AddMvc().AddJsonOptions(options => {
                 options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
@@ -105,7 +121,7 @@ namespace WebShopAPI
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                app.UseCors(builder => builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+                app.UseCors("AllowSpecificOrigin");
 
                 using (var scope = app.ApplicationServices.CreateScope())
                 {
@@ -117,13 +133,14 @@ namespace WebShopAPI
             else
             {
                 app.UseDeveloperExceptionPage();
-                app.UseCors(builder => builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+                app.UseCors("AllowSpecificOrigin");
                 app.UseHsts();
+
 
                 using (var scope = app.ApplicationServices.CreateScope())
                 {
                     var ctx = scope.ServiceProvider.GetService<WebShopContext>();
-                    DBSeed.SeedDB(ctx);
+                    //DBSeed.SeedDB(ctx);
                 }
 
             }

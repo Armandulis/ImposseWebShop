@@ -7,19 +7,39 @@ namespace WebShop.Core.ApplicationService
 {
     public interface IStoryService
     {
-        //  Crud
-
-        //create
+        /// <summary>
+        /// Add a story to the database.
+        /// </summary>
+        /// <param name="story"></param>
+        /// <returns></returns>
         Story CreateStory(Story story);
 
-        //read
+        /// <summary>
+        /// Get a story by id.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         Story GetStory(int id);
+
+        /// <summary>
+        /// Get all stories, with an optional filter for paging purposes.
+        /// </summary>
+        /// <param name="filter"></param>
+        /// <returns></returns>
         List<Story> GetAllStories(Filter filter = null);
 
-        //update
+        /// <summary>
+        /// Update a story with new information.
+        /// </summary>
+        /// <param name="story"></param>
+        /// <returns></returns>
         Story UpdateStory(Story story);
 
-        //delete
+        /// <summary>
+        /// Delete a story by id.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         Story DeleteStory(int id);
 
     }

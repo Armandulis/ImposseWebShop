@@ -63,5 +63,10 @@ namespace WebShop.Core.ApplicationService.Services
             user.PasswordHash = passHash;
             user.PasswordSalt = passSalt;
         }
+
+        public List<string> GetUsernames()
+        {
+            return _userRepo.GetAll().Select(u => u.Username).ToList();
+        }
     }
 }

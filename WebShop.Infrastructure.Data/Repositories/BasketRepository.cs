@@ -53,7 +53,7 @@ namespace WebShop.Infrastructure.Data.Repositories
             }
 
             _ctx.Entry(basket).Reference(b => b.User).IsModified = true;
-            _ctx.Attach(basket).State = EntityState.Added;
+            _ctx.Baskets.Attach(basket).State = EntityState.Added;
             _ctx.SaveChanges();
 
             return basket;
@@ -67,7 +67,7 @@ namespace WebShop.Infrastructure.Data.Repositories
                 basket.Products.Add(product);
             }
             _ctx.Entry(basket).Collection(b => b.Products).IsModified = true;
-            _ctx.Attach(basket).State = EntityState.Modified;
+            _ctx.Baskets.Attach(basket).State = EntityState.Modified;
             _ctx.SaveChanges();
         }
     }

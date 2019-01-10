@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -23,6 +24,7 @@ namespace WebShopAPI.Controllers
         }
 
         // GET: api/Basket/5
+        [Authorize]
         [HttpGet("{id}", Name = "Get")]
         public ActionResult<Basket> Get(int id)
         {
@@ -37,6 +39,7 @@ namespace WebShopAPI.Controllers
         }
 
         // PUT: api/Basket/5
+        [Authorize]
         [HttpPut("{id}")]
         public void Put(int id, [FromQuery] bool clear, [FromBody] Product product)
         {
@@ -49,6 +52,7 @@ namespace WebShopAPI.Controllers
         }
 
         // DELETE: api/Basket/5
+        [Authorize]
         [HttpDelete("{id}")]
         public void Delete(int id, [FromBody] Product product)
         {

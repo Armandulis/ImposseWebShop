@@ -7,25 +7,52 @@ namespace WebShop.Core.ApplicationService
 {
     public interface IReviewService
     {
-        //  Crud
-
-        //create
+        /// <summary>
+        /// Add a new review to the database.
+        /// </summary>
+        /// <param name="review"></param>
+        /// <returns></returns>
         Review CreateReview(Review review);
 
-        //read
+        /// <summary>
+        /// Get a review by id.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         Review GetReview(int id);
+
+        /// <summary>
+        /// Get all reviews from the database.
+        /// </summary>
+        /// <returns></returns>
         List<Review> GetAllReviews();
 
-        //update
+        /// <summary>
+        /// Update a review with new information.
+        /// </summary>
+        /// <param name="review"></param>
+        /// <returns></returns>
         Review UpdateReview(Review review);
 
-        //delete
+        /// <summary>
+        /// Delete a review from the database by id.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         Review DeleteReview(int id);
 
-        //Get reviews of a product
+        /// <summary>
+        /// Get all reviews of a given product.
+        /// </summary>
+        /// <param name="productId"></param>
+        /// <returns></returns>
         List<Review> GetReviewsByProduct(int productId);
 
-        //Get reviews by user
+        /// <summary>
+        /// Get all reviews by a given user.
+        /// </summary>
+        /// <param name="userId"></param>
+        /// <returns></returns>
         List<Review> GetReviewsByUser(int userId);
     }
 }
